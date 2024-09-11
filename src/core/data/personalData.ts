@@ -31,7 +31,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "",
       codeUrl: "",
-      image: "pricing-program.jpg",
+      image: "pricing-program.webp",
       technologies: [
         "HTML5",
         "CSS3",
@@ -47,7 +47,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://steelbuildingstores.com/",
       codeUrl: "",
-      image: "steel-building-stores.jpg",
+      image: "steel-building-stores.webp",
       technologies: [
         "HTML5",
         "CSS3",
@@ -63,7 +63,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://www.directmetalbuildings.com/",
       codeUrl: "",
-      image: "direct-metal-buildings.jpg",
+      image: "direct-metal-buildings.webp",
       technologies: ["HTML5", "CSS3", "Astro", "TailwindCSS", "Svelte"],
     },
     {
@@ -72,7 +72,7 @@ export const personalData: PersonalData = {
       publicCode: true,
       url: "https://alexcoronell.github.io/",
       codeUrl: "https://github.com/alexcoronell/alexcoronell.github.io.git",
-      image: "alexcoronell-v1.jpg",
+      image: "alexcoronell-v1.webp",
       technologies: ["HTML5", "CSS3", "React", "Material UI"],
     },
     {
@@ -81,7 +81,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://catapultsteel.com/",
       codeUrl: "",
-      image: "catapult-steel.jpg",
+      image: "catapult-steel.webp",
       technologies: ["HTML5", "CSS3", "Astro", "TailwindCSS", "Svelte"],
     },
     {
@@ -90,7 +90,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://masterisand-react-oldsite.vercel.app/",
       codeUrl: "",
-      image: "masterisand.jpg",
+      image: "masterisand.webp",
       technologies: ["HTML5", "CSS3", "React", "Bootstrap"],
     },
     {
@@ -99,7 +99,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://el-maderero-oldsite.vercel.app/",
       codeUrl: "",
-      image: "el-maderero.jpg",
+      image: "el-maderero.webp",
       technologies: ["HTML5", "CSS3", "Javascript", "Bootstrap"],
     },
     {
@@ -108,7 +108,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "",
       codeUrl: "",
-      image: "nettside.jpg",
+      image: "nettside.webp",
       technologies: ["HTML5", "CSS3", "Angular", "Bootstrap"],
     },
     {
@@ -117,7 +117,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://smart-home-projectsite.vercel.app/",
       codeUrl: "",
-      image: "smarthome.jpg",
+      image: "smarthome.webp",
       technologies: ["HTML5", "CSS3", "Javascript", "Bootstrap"],
     },
     {
@@ -126,7 +126,7 @@ export const personalData: PersonalData = {
       publicCode: false,
       url: "https://cms-curriculum-alex-coronell.vercel.app/",
       codeUrl: "",
-      image: "cv-alexcoronell.jpeg",
+      image: "cv-alexcoronell.webp",
       technologies: ["HTML5", "CSS3", "Angular", "Firebase", "Bootstrap"],
     },
     {
@@ -135,7 +135,7 @@ export const personalData: PersonalData = {
       publicCode: true,
       url: "",
       codeUrl: "https://github.com/alexcoronell/SICOAIN_FullStackMean",
-      image: "sicoain-meanstack.jpg",
+      image: "sicoain-meanstack.webp",
       technologies: [
         "HTML5",
         "CSS3",
@@ -151,7 +151,7 @@ export const personalData: PersonalData = {
       publicCode: true,
       url: "",
       codeUrl: "https://github.com/alexcoronell/SICOAIN_PHP_FINAL",
-      image: "sicoain.jpg",
+      image: "sicoain.webp",
       technologies: ["HTML5", "CSS3", "PHP", "Javascript", "JQuery", "MySQL"],
     },
   ],
