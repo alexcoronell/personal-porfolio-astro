@@ -1,4 +1,5 @@
 ---
+import Basehead from "../components/Shared/Basehead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource/fira-mono";
@@ -19,57 +20,7 @@ const { title, location } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      is:inline
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-ERK96N0KGF"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-ERK96N0KGF");
-    </script>
-
-    <!-- Bing HTML Meta Tag -->
-    <meta name="msvalidate.01" content="9F9D2A61BF1C263D384A41045D5126A4" />
-
-    <meta name="locale" content="en_US" />
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="site_name" content={personalData.site} />
-    <meta name="author" content={personalData.shortname} />
-    <meta name="url" content={location} />
-    <meta
-      name="description"
-      content="Fullstack Developer in Angular, NestJS and more"
-    />
-    <meta
-      name="keywords"
-      content="HTML, CSS, Javascript, Git, Typescript, Angular, React, Astro, Linux, NestJS, NodeJS, Bootstrap, Sass, Tailwind, jQuery"
-    />
-    <link rel="canonical" href={location} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="”robots”" content="”index," follow” />
-    <!-- Open Graph -->
-    <meta property="og:locale" content="en_US" />
-    <meta property="”og:type”" content="”website”" />
-    <meta property="og:site_name" content={personalData.site} />
-    <meta property="”og:title”" content={title} />
-    <meta property="og:url" content={location} />
-    <meta
-      property="”og:description”"
-      content="Fullstack Developer in Angular, NestJS and more"
-    />
-    <title>{title}</title>
-  </head>
+  <Basehead title={title} location={location} />
   <body>
     <Header />
     <slot />
