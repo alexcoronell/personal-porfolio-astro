@@ -1,6 +1,11 @@
 ---
 /* Components */
 import Section from "../Shared/Section.astro";
+import JavaIcon from "../UI/icons/JavaIcon.astro"
+import SpringIcon from "../UI/icons/SpringIcon.astro"
+import NextjsIcon from "../UI/icons/NextjsIcon.astro"
+import PythonIcon from "../UI/icons/PythonIcon.astro"
+import CSharpIcon from "../UI/icons/CSharpIcon.astro"
 
 /* Types */
 import { type MenuItem } from '../../core/models/MenuItem.interface';
@@ -19,6 +24,33 @@ const idTag = menuItems[index-1].url;
 
 <Section index={index} title={title} idTag={idTag}>
     <div class="learning" id="learning">
-        
+        <div class="learning__item"><JavaIcon class="text-5xl" /><p>Java</p></div>
+        <div class="learning__item"><SpringIcon class="text-5xl" /><p>Spring Framework</p></div>
+        <div class="learning__item"><NextjsIcon class="text-5xl" /><p>NextJS</p></div>
+        <div class="learning__item"><PythonIcon class="text-5xl" /><p>Python</p></div>
+        <div class="learning__item"><CSharpIcon class="text-5xl" /><p>C#</p></div>
     </div>
 </Section>
+
+<style>
+    .learning {
+        @apply border w-full relative my-8 h-[100px];
+
+        .learning__item {
+            @apply w-[300px] h-[100px] border border-white flex items-center justify-center gap-x-3 px-8 bg-transparent absolute left-[100%];
+            animation-name: scrollLeft;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+
+            p {
+                @apply m-0 text-lg;
+            }
+        }
+
+        @keyframes scrollLeft {
+            to {
+                left: 300px;
+            }
+        }
+    }
+</style>
