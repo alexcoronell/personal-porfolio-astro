@@ -1,7 +1,6 @@
 ---
 /* Components */
 import Section from "../Shared/Section.astro";
-import Experiences from "./Experiences";
 
 /* Types */
 import { type MenuItem } from '../../core/models/MenuItem.interface';
@@ -13,13 +12,13 @@ import { translateMenu } from '../../i18n/translate'
 const lang = getLangFromUrl(Astro.url)
 const menuItems: MenuItem[] = translateMenu(lang)
 
-const index = 5;
+const index = 3;
 const title = menuItems[index-1].name
 const idTag = menuItems[index-1].url;
 ---
 
 <Section index={index} title={title} idTag={idTag}>
-  <div class="ExperiencesSection">
-    <Experiences lang={lang} client:load />
-  </div>
+    <div class="learning" id="learning">
+        
+    </div>
 </Section>
