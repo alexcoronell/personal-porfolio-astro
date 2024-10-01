@@ -209,6 +209,7 @@ export const translateMenu = (lang: string) => {
     const menuItemsEs: MenuItem[] = [
       { name: "Acerca de Mi", url: "#AcercaDeMi" },
       { name: "Habilidades", url: "#Habilidades" },
+      { name: "Aprendiendo", url: "#Aprendiendo" },
       { name: "Portafolio", url: "#Portafolio" },
       { name: "Experiencia", url: "#Experiencias" },
       { name: "Contacto", url: "#Contacto" },
