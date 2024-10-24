@@ -41,8 +41,13 @@ if (lang === "es") {
   <div class="blurFilter filter hiddenFilter" id="filter"></div>
   <nav id="menu" class="menu hidden-menu">
     <div class="areaCloseMenuButton">
-      <button type="button" id="close-menu-button"
-        ><CloseIcon class="size-10" /></button
+      <button
+        type="button"
+        id="close-menu-button"
+        role="button"
+        aria-label="Close the menu"
+        ><CloseIcon class="size-10" /><span class="sr-only">Close the menu</span
+        ></button
       >
     </div>
     <div class="menuItems">
