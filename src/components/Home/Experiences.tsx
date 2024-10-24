@@ -30,8 +30,11 @@ const Experiences = (props: any) => {
             key={index}
             id={"-btn-" + index}
             onClick={() => setCurrentExperienceIndex(index)}
+            role="button"
+            aria-label={"Load de experience with " + item.business}
           >
             {item.business}
+            <span className="sr-only">{"Load de experience with " + item.business}</span>
           </button>
         ))}
       </div>
