@@ -29,22 +29,33 @@ if (lang === "es") {
 ---
 
 <div class="MainMenu p-3">
-  <button type="button" id="open-menu-button" class="lg:hidden"
-    ><MenuIcon class="size-10" /></button
+  <button
+    type="button"
+    id="open-menu-button"
+    class="lg:hidden"
+    role="button"
+    aria-label="Open the menu"
+    ><MenuIcon class="size-10" /><span class="sr-only">Open the menu</span
+    ></button
   >
   <div class="blurFilter filter hiddenFilter" id="filter"></div>
   <nav id="menu" class="menu hidden-menu">
     <div class="areaCloseMenuButton">
-      <button type="button" id="close-menu-button"
-        ><CloseIcon class="size-10" /></button
+      <button
+        type="button"
+        id="close-menu-button"
+        role="button"
+        aria-label="Close the menu"
+        ><CloseIcon class="size-10" /><span class="sr-only">Close the menu</span
+        ></button
       >
     </div>
     <div class="menuItems">
       {
         menuItems.map((item, index) => (
           <a class="MainMenuItem" href={"#" + item.url}>
-              <span class="index">0{index + 1}.</span>
-              <span class="name transitionAc">{item.name}</span>
+            <span class="index">0{index + 1}.</span>
+            <span class="name transitionAc">{item.name}</span>
           </a>
         ))
       }
@@ -102,7 +113,7 @@ if (lang === "es") {
     }
   };
 
-  changeLanguageIcons()
+  changeLanguageIcons();
 </script>
 
 <style>

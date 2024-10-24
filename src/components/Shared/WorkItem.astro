@@ -60,18 +60,25 @@ const hrefActive = item.url.length > 0;
           class="btn-primary inline-flex items-center justify-center text-center w-[130px]"
         >
           {visitTextButton}
+          <span class="sr-only">Visit the {item.title} website</span>
         </a>
       )
     }
 
     {
       !hrefActive && (
-        <a
-          tabindex="-1"
+        <button
           class="btn-primary btn-primary--disabled inline-flex items-center justify-center text-center w-[130px]"
+          role="button"
+          aria-disabled="true"
+          disabled
+          title={`The ${item.title} website is not available at this time`}
         >
           {visitTextButton}
-        </a>
+          <span class="sr-only">
+            The {item.title} website is not available at this time
+          </span>
+        </button>
       )
     }
 
@@ -80,10 +87,25 @@ const hrefActive = item.url.length > 0;
         <a
           href={item.codeUrl}
           target="_blank"
-          class="btn-primary inline-flex items-center justify-center text-center px-4 w-[130px"
+          class="btn-primary inline-flex items-center justify-center text-center px-4 w-[130px]"
         >
           {visitTheCodeTextButton}
+          <span class="sr-only">Visit the {item.title} code</span>
         </a>
+      )
+    }
+    {
+      !item.publicCode && (
+        <button
+          class="btn-primary btn-primary--disabled inline-flex items-center justify-center text-center w-[130px]"
+          role="button"
+          aria-disabled="true"
+          disabled
+          title={`The ${item.title} code is private`}
+        >
+          {visitTheCodeTextButton}
+          <span class="sr-only">The {item.title} code is private</span>
+        </button>
       )
     }
   </div>
