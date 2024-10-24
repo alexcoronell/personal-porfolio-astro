@@ -29,42 +29,52 @@ if (lang === "es") {
 ---
 
 <div class="MainMenu p-3">
-  <button
-    type="button"
-    id="open-menu-button"
-    class="lg:hidden"
-    role="button"
-    aria-label="Open the menu"
-    ><MenuIcon class="size-10" /><span class="sr-only">Open the menu</span
-    ></button
+  <button type="button" id="open-menu-button" class="lg:hidden"
+    ><MenuIcon class="size-10" /></button
   >
   <div class="blurFilter filter hiddenFilter" id="filter"></div>
   <nav id="menu" class="menu hidden-menu">
     <div class="areaCloseMenuButton">
-      <button
-        type="button"
-        id="close-menu-button"
-        role="button"
-        aria-label="Close the menu"
-        ><CloseIcon class="size-10" /><span class="sr-only">Close the menu</span
-        ></button
+      <button type="button" id="close-menu-button"
+        ><CloseIcon class="size-10" /></button
       >
     </div>
     <div class="menuItems">
       {
         menuItems.map((item, index) => (
-          <a class="MainMenuItem" href={"#" + item.url}>
+          <a
+            class="MainMenuItem"
+            href={"#" + item.url}
+            aria-label={`Go to ${item.name} section`}
+          >
             <span class="index">0{index + 1}.</span>
             <span class="name transitionAc">{item.name}</span>
+            <span class="sr-only">Go to {item.name} section</span>
           </a>
         ))
       }
-      <a href={resumeUrl} target="_blank" class="navResumeButton btn-primary"
-        >{resumeName}</a
-      >
+      <a
+        href={resumeUrl}
+        target="_blank"
+        class="navResumeButton btn-primary"
+        download={`${resumeName}.pdf`}
+        aria-label={`Download my ${resumeName}`}
+        >{resumeName}
+        <span class="sr-only">Download my {resumeName}</span>
+      </a>
       <div class="languageMenu">
-        <a href="es" id="spainFlagIcon"><SpainFlagIcon /></a>
-        <a href="/" id="usaFlagIcon"><UsaFlagIcon /></a>
+        <a
+          href="es"
+          id="spainFlagIcon"
+          arial-label="Cambia el lenguaje a español"
+          ><SpainFlagIcon /><span class="sr-only"
+            >Cambia el lenguaje a español</span
+          ></a
+        >
+        <a href="/" id="usaFlagIcon" arial-label="Change language to English"
+          ><UsaFlagIcon /><span class="sr-only">Change language to English</span
+          ></a
+        >
       </div>
     </div>
   </nav>
