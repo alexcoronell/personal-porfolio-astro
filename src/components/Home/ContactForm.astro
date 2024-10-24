@@ -46,7 +46,13 @@ if (lang === "es") {
       ></textarea>
     </div>
     <div class="buttonArea">
-      <button type="submit" id="btn-button">{submitButtonText}</button>
+      <button
+        type="submit"
+        id="btn-button"
+        role="button"
+        aria-label="Send the message"
+        >{submitButtonText}<span class="sr-only">Send the message</span></button
+      >
     </div>
   </form>
 
@@ -58,7 +64,10 @@ if (lang === "es") {
       <span class="icon-[material-symbols--error-rounded] text-red"></span>
       <h4 class="text-red">Error</h4>
       <p>{errorMessage}</p>
-      <button id="closeError">{closeButtonText}</button>
+      <button id="closeError" role="button" aria-label="Close error message"
+        >{closeButtonText}<span class="sr-only">Close error message</span
+        ></button
+      >
     </div>
   </div>
 
@@ -68,7 +77,10 @@ if (lang === "es") {
       ></span>
       <h4 class="text-primary-dark">Success</h4>
       <p>{successMessage}</p>
-      <button id="closeSuccess">{closeButtonText}</button>
+      <button id="closeSuccess" role="button" aria-label="Close success message"
+        >{closeButtonText}<span class="sr-only">Close success message</span
+        ></button
+      >
     </div>
   </div>
 </div>
