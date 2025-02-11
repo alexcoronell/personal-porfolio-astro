@@ -9,8 +9,12 @@ import { type Work, type Status } from "../../core/types/PersonalData";
 /* Props */
 interface Props {
   item: Work;
+  index: number;
 }
-const { item } = Astro.props;
+
+
+const { item, index } = Astro.props;
+const translateClass = index % 2 === 0 ? "lg:translate-x-[-50%]" : "lg:translate-x-[50%]";
 let technologiesTitle = "Technologies";
 let status: Status | string = item.status;
 let visitTextButton = "Visit";
@@ -27,7 +31,7 @@ const pathImages = "/assets/images/briefcase/";
 const hrefActive = item.url.length > 0;
 ---
 
-<div class="WorkItem">
+<div class={`WorkItem ${translateClass}`}>
   <img
     class="rounded-t-lg"
     src={pathImages + item.image}
@@ -113,7 +117,11 @@ const hrefActive = item.url.length > 0;
 
 <style>
   .WorkItem {
-    @apply max-w-sm border border-primary/30 rounded-lg shadow p-0 pb-5 mb-5 md:m-0 mx-auto flex flex-col justify-between overflow-hidden;
+    @apply max-w-sm border border-primary/30 rounded-lg shadow p-0 pb-5 mb-5 md:m-0 mx-auto flex flex-col justify-between overflow-hidden opacity-0 translate-y-[25%];
+    animation: animationFadeInTranslate linear forwards;
+    animation-timeline: view();
+    animation-range-start: 10%;
+    animation-range-end: 30%;
 
     &__detail {
       @apply p-5 grow flex flex-col;
