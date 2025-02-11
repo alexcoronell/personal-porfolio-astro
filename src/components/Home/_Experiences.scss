@@ -1,5 +1,9 @@
 .Experiences {
-  @apply md:flex md:gap-x-8;
+  @apply md:flex md:gap-x-8 opacity-0 translate-y-[25%];
+  animation: animationFadeInTranslate linear forwards;
+  animation-timeline: view();
+  animation-range-start: 10%;
+  animation-range-end: 30%;
   &__business {
     @apply flex flex-wrap py-2 mb-5 md:flex-col md:items-start grow-0;
     &__button {
