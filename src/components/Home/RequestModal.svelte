@@ -18,26 +18,32 @@
             {#if $requestStatus === "loading"}
                 <Spinner classes="w-[100px] h-[100px]" />
             {/if}
-            {#if $requestStatus === "success"}
-                <CheckIcon classes="w-[100px] h-[100px]" />
+            <div class="RequestModal__content">
+                {#if $requestStatus === "success"}
+                <CheckIcon classes="w-[80px] h-[80px]" />
                 <h4>{successMessage}</h4>
                 <button class="btn-primary" on:click={hideModal}>{$currentLanguage === "es" ? "Cerrar" : "Close"}</button>
             {/if}
             {#if $requestStatus === "error"}
-                <WarningIcon classes="w-[100px] h-[100px] text-red" />
+                <WarningIcon classes="w-[80px] h-[80px] text-red" />
                 <h4 class="text-red">{errorMessage}</h4>
                 <button class="btn-error" on:click={hideModal}>{$currentLanguage === "es" ? "Intenta de nuevo" : "Try Again"}</button>
             {/if}
+            </div>
         </div>
     </ModalLayout>
 {/if}
 
 <style>
     .RequestModal {
-        @apply flex flex-col items-center justify-center gap-y-5 w-[300px] h-[300px];
+        @apply flex flex-col items-center justify-center w-[300px] h-[300px] md:w-[500px];
+
+        &__content {
+            @apply flex flex-col items-center justify-center gap-y-5;
+        }
 
         h4 {
-            @apply text-2xl text-center;
+            @apply text-xl md:text-2xl text-center;
         }
     }
 </style>
