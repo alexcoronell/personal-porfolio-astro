@@ -5,15 +5,21 @@
   animation-range-start: 10%;
   animation-range-end: 30%;
   &__business {
-    @apply flex flex-wrap py-2 mb-5 md:flex-col md:items-start grow-0;
+    @apply grid grid-cols-2 max-md:gap-3 py-2 mb-5 md:flex md:flex-col md:items-start grow-0;
     &__button {
-      @apply py-3 px-2 text-white max-md:border-b border-primary/30 
-      max-md:border-primary/50 max-md:hover:bg-white/10
-      md:border-l md:pl-[2.5rem] md:whitespace-nowrap;
+      @apply md:py-3 md:px-2 md:text-white md:border md:border-primary/30 
+      md:border-l md:pl-[1.5rem] md:whitespace-nowrap md:text-left md:w-full md:min-w-[300px];
     }
   }
+
   &__details {
-    @apply py-2 grow;
+    @apply py-2 grow max-lg:hidden;
+  }
+}
+
+
+
+.ExperiencesDetails {
     &__header {
       @apply flex flex-wrap gap-x-2;
       h4, h5 {
@@ -43,9 +49,22 @@
       }
     }
   }
+
+.ExperiencesDetailsModal {
+  @apply fixed top-0 left-0 bottom-0 right-0 w-screen h-screen bg-black/90 z-50 flex items-center justify-center p-3 transition-all duration-300;
+  &__box {
+    @apply relative w-full max-w-[500px] max-h-[80vh] mx-3 bg-primary-dark pt-16 p-6 text-sm overflow-y-scroll;
+
+    .btnClose {
+      @apply absolute top-3 right-3 text-3xl;
+    }
+    &__content {
+      @apply overflow-y-auto;
+    }
+  }
 }
 
 .businessActive {
-  @apply max-md:border-b border-primary max-md:shadow-sm max-md:shadow-primary
-  text-primary md:border-l-2 md:pl-[2.43rem];
+  @apply md:border md:border-primary max-md:shadow-sm 
+  md:text-primary md:border-l-2 md:pl-[2.5rem];
 }
