@@ -10,8 +10,8 @@ const showModal = () => isVisibleModal.set(true);
 const hideModal = () => isVisibleModal.set(false);
 
 const isVisibleModalExperience = writable<boolean>(false);
-const showModalExperience = () => isVisibleModal.set(true);
-const hideModalExperience = () => isVisibleModal.set(false);
+const showModalExperience = () => isVisibleModalExperience.set(true);
+const hideModalExperience = () => isVisibleModalExperience.set(false);
 
 const experiencesDataStore = writable<Experience[]>([]);
 const currentExperienceStoreIndex = writable<number>(0);

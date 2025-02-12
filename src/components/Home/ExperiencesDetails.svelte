@@ -1,6 +1,6 @@
 <script lang="ts">
   import { currentExperienceStore } from "../../stores/store";
-</script>
+</script>   
 
 <article class="ExperiencesDetails">
   <div class="ExperiencesDetails__header">

@@ -5,30 +5,47 @@
     experiencesDataStore,
     setCurrentExperience,
     currentExperienceStoreIndex,
+    showModalExperience,
+    isVisibleModalExperience
   } from "../../stores/store";
   import { onMount } from "svelte";
 
   export let lang: string = "";
+
   onMount(() => {
     setTimeout(() => {
       setExperiencesData(lang);
       setCurrentExperience(0);
     }, 300);
   });
+
+  const updateCurrentExperience = (index: number) => {
+    const width = window.innerWidth;
+    setCurrentExperience(index);
+    if (width < 768) {
+      showModalExperience();
+      console.log(index, width, $isVisibleModalExperience);
+    }
+  }
 </script>
 
 <section class="Experiences">
   <div class="Experiences__business">
     {#each $experiencesDataStore as experience, index}
       <button
-        class="Experiences__button {index === $currentExperienceStoreIndex ? 'businessActive' : ''}"
-        on:click={() => setCurrentExperience(index)}
+        class="Experiences__button btn-primary {index ===
+        $currentExperienceStoreIndex
+          ? 'businessActive'
+          : ''}"
+        on:click={() => updateCurrentExperience(index)}
       >
         {experience.business}
       </button>
     {/each}
   </div>
-  <ExperiencesDetails />
+  <div class="Experiences__details" >
+      <ExperiencesDetails />
+  </div>
 </section>
 
 <style lang="scss">
@@ -47,12 +64,12 @@
     }
 
     &__details {
-      @apply py-2 grow max-lg:hidden;
+      @apply py-2 grow max-md:hidden;
     }
 
     .businessActive {
-  @apply md:border md:border-primary max-md:shadow-sm 
-  md:text-primary md:border-l-2 md:pl-[2.5rem];
-}
+      @apply md:border md:border-primary max-md:shadow-sm 
+  md:text-primary md:border-l-2 md:pl-[2.5rem] hover:text-primary-dark;
+    }
   }
 </style>
