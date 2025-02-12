@@ -46,8 +46,16 @@ import "./_About.scss";
   <div class="AboutMe">
     <div class="AboutMe__pictureBox">
       <picture class="AboutMe__pictureBox__picture">
-        <img class="mobile" src={profileImgMobile} alt={personalData.shortname + " Profile Image"} />
-        <img class="desktop" src={profileImgDesktop} alt={personalData.shortname + " Profile Image"} />
+        <img
+          class="mobile"
+          src={profileImgMobile}
+          alt={personalData.shortname + " Profile Image"}
+        />
+        <img
+          class="desktop"
+          src={profileImgDesktop}
+          alt={personalData.shortname + " Profile Image"}
+        />
       </picture>
     </div>
     <div class="AboutMe__text">
@@ -56,3 +64,33 @@ import "./_About.scss";
     </div>
   </div>
 </Section>
+
+<style lang="scss">
+  .AboutMe {
+    &__pictureBox,
+    &__text {
+      @apply opacity-0;
+    }
+    &__pictureBox {
+      @apply max-lg:scale-50 lg:translate-x-[-100%];
+      animation: animationFadeInScale linear forwards;
+      animation-timeline: view();
+      animation-range-start: 20%;
+      animation-range-end: 40%;
+    }
+    &__text {
+      animation: animationFadeIn linear forwards;
+      animation-timeline: view();
+      animation-range-start: 15%;
+      animation-range-end: 40%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .AboutMe {
+      &__pictureBox {
+        animation-name: animationFadeInTranslate;
+      }
+    }
+  }
+</style>

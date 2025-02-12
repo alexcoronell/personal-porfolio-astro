@@ -16,12 +16,14 @@ const worksId = menu[3].url;
 
 let title = "Hi, my name is";
 let text = "Know my works";
-let shortPresentation = "I'm a full-stack developer with 5 years of experience. I'm primarily focused on frontend development, but I also have experience with backend development.";
+let shortPresentation =
+  "I'm a full-stack developer with 5 years of experience. I'm primarily focused on frontend development, but I also have experience with backend development.";
 
 if (lang === "es") {
   title = "Hola, mi nombre es";
   text = "Conoce mi trabajo";
-  shortPresentation = "Soy un desarrollador full-stack con 5 años de experiencia. Me dedico principalmente al desarrollo frontend, pero también tengo experiencia en desarrollo backend."
+  shortPresentation =
+    "Soy un desarrollador full-stack con 5 años de experiencia. Me dedico principalmente al desarrollo frontend, pero también tengo experiencia en desarrollo backend.";
 }
 ---
 
@@ -30,7 +32,7 @@ if (lang === "es") {
     <h5>{title}</h5>
     <h1>{personalData.shortname}.</h1>
     <p>{shortPresentation}</p>
-    <a href={'#'+worksId} class="btn-primary">{text}!</a>
+    <a href={"#" + worksId} class="btn-primary">{text}!</a>
   </div>
 </div>
 
@@ -40,17 +42,42 @@ if (lang === "es") {
     &__content {
       @apply px-6 sm:px-12 lg:px-0 w-full md:max-w-[700px] xl:max-w-[900px];
 
+      h5,
+      h1,
+      p,
+      a {
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+      }
+
       h5 {
-        @apply mb-2 lg:mb-4;
+        @apply mb-2 lg:mb-4 opacity-0;
+        animation: animationFadeIn;
+        animation-delay: 0.3s;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
       }
       h1 {
-        @apply text-white mb-14 xl:max-w-[500px];
+        @apply text-white mb-14 xl:max-w-[500px] opacity-0 translate-x-[100%];
+        animation: animationFadeInTranslate;
+        animation-delay: 0.7s;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
       }
       p {
-        @apply mb-14 text-balance text-xl lg:text-2xl;
+        @apply mb-14 text-balance text-xl lg:text-2xl opacity-0 translate-y-[50%];
+        animation: animationFadeInTranslate;
+        animation-delay: 1.4s;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
       }
       a {
-        @apply w-[180px] my-5;
+        @apply w-[180px] my-5 opacity-0;
+        animation: animationFadeIn;
+        animation-delay: 2s;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
       }
     }
   }

@@ -21,7 +21,7 @@ const idTag = menuItems[index-1].url;
 <Section index={index} title={title} idTag={idTag}>
     <div class="Works md:grid md:grid-cols-2 md:gap-6">
         {
-            personalData.works.map(item => <WorkItem item={item} />)
+            personalData.works.map((item, index) => <WorkItem item={item} index={index} />)
         }
     </div>
 </Section>
