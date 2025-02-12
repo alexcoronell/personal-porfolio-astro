@@ -14,6 +14,7 @@ const showModalExperience = () => isVisibleModal.set(true);
 const hideModalExperience = () => isVisibleModal.set(false);
 
 const experiencesDataStore = writable<Experience[]>([]);
+const currentExperienceStoreIndex = writable<number>(0);
 const currentExperienceStore = writable<Experience | null>(null);
 
 const setExperiencesData = (lang: string) => {
@@ -25,7 +26,10 @@ const setExperiencesData = (lang: string) => {
 };
 
 const setCurrentExperience = (index: number) => {
-  currentExperienceStore.set(experiences[index]);
+  currentExperienceStoreIndex.set(index);
+  experiencesDataStore.subscribe((experiences) => {
+    currentExperienceStore.set(experiences[index]);
+  });
 };
 
 export {
@@ -36,6 +40,7 @@ export {
   showModalExperience,
   hideModalExperience,
   experiencesDataStore,
+  currentExperienceStoreIndex,
   currentExperienceStore,
   setExperiencesData,
   setCurrentExperience,
