@@ -1,14 +1,13 @@
-import { type ContactMessage } from "../types/ContactMessage";
+import type { ContactForm } from "../interfaces/ContactForm.interface";
 
 const urlGooglesheet =
-    "https://script.google.com/macros/s/AKfycbx2elPpcMyQ4jjTiKIdNn4mwNnuzVTJTljD6870lFewqxGO8Y-p1Ww8VJhDN7MTQ4HfUw/exec";
+  "https://script.google.com/macros/s/AKfycbyGfKreQZAVi0gOI660JX4DnDmYvXb_7oXvQL4rNxv0Gqv1NXZN18dfFr7LnvqGTO-A/exec";
 
-const sendContactUsMessage = async (contactMessage: ContactMessage) => {
-    const formData = new FormData()
-    formData.append("firstname", contactMessage.name);
-    formData.append("email", contactMessage.email);
-    formData.append("message", contactMessage.message);
-    return await fetch(urlGooglesheet, { method: "POST", body: formData })
-}
-
-export default sendContactUsMessage;
+export const sendContactUsMessage = async (contactMessage: ContactForm) => {
+  const formData = new FormData();
+  formData.append("fullname", contactMessage.fullname);
+  formData.append("email", contactMessage.email);
+  formData.append("message", contactMessage.message);
+  formData.append("language", contactMessage.language);
+  return await fetch(urlGooglesheet, { method: "POST", body: formData });
+};

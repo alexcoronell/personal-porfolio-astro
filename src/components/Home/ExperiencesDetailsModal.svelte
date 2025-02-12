@@ -7,10 +7,10 @@
 
 {#if $isVisibleModalExperience}
   <ModalLayout>
-    <div class="ExperienceDetailsModal pointer-events-none">
+    <div class="ExperienceDetailsModal">
         <div class="ExperienceDetailsModal__closeButton">
             <button on:click={hideModalExperience}>
-                <CloseIcon classes="w-12 h-12" />
+                <CloseIcon classes="w-8 h-8" />
             </button>
         </div>
         <ExperiencesDetails />
