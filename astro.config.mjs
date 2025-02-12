@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
+import svelte from "@astrojs/svelte";
+
 import preact from "@astrojs/preact";
 
 import sitemap from "@astrojs/sitemap";
@@ -16,15 +18,16 @@ export default defineConfig({
       nesting: true,
       applyBaseStyles: false,
     }),
+    svelte(),
     preact(),
     sitemap(),
   ],
   i18n: {
     defaultLocale: "en",
-    locales: ['en', 'es'],
+    locales: ["en", "es"],
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
   output: "server",
   adapter: cloudflare(),

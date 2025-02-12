@@ -1,5 +1,9 @@
 ---
-import ContactForm from './ContactForm.astro'
+import ContactForm from './ContactForm.svelte'
+/* Utils */
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url)
 ---
 <div class="ContactLinkedinProfile relative">
     <div class="relative mx-auto border-primary bg-dark border-[14px] rounded-xl h-[600px] w-[300px] shadow-md shadow-primary">
@@ -9,7 +13,7 @@ import ContactForm from './ContactForm.astro'
         <div class="h-[46px] w-[3px] bg-primary absolute -start-[17px] top-[178px] rounded-s-lg"></div>
         <div class="h-[64px] w-[3px] bg-primary absolute -end-[17px] top-[142px] rounded-e-lg"></div>
         <div class="overflow-hidden w-[272px] h-[572px] bg-primary">
-            <ContactForm />
+            <ContactForm client:load lang={lang} />
         </div>
     </div>
 </div>
