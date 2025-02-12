@@ -13,3 +13,13 @@ import ContactForm from './ContactForm.astro'
         </div>
     </div>
 </div>
+
+<style>
+    .ContactLinkedinProfile {
+        @apply opacity-0 translate-y-[25%];
+        animation: animationFadeInTranslate linear forwards;
+        animation-timeline: view();
+        animation-range-start: 10%;
+        animation-range-end: 35%;
+    }
+</style>
