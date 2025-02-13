@@ -1,14 +1,14 @@
 <script lang="ts">
-  import ModalLayout from "../../layouts/ModalLayout.svelte";
-  import Spinner from "../UI/icons/Spinner.svelte";
-  import CheckIcon from "../UI/icons/CheckIcon.svelte";
-  import WarningIcon from "../UI/icons/WaningIcon.svelte";
+  import ModalLayout from "../../../layouts/ModalLayout.svelte";
+  import Spinner from "../icons/Spinner.svelte";
+  import CheckIcon from "../icons/CheckIcon.svelte";
+  import WarningIcon from "../icons/WaningIcon.svelte";
   import {
     isVisibleModal,
     hideModal,
     requestStatus,
     currentLanguage,
-  } from "@stores/store";
+  } from "../../../stores/store";
   let successMessage: string;
   let errorMessage: string;
   $: currentLanguage.subscribe((value) => {
