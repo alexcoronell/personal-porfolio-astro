@@ -53,9 +53,6 @@ importers:
       astro:
         specifier: ^5.2.5
         version: 5.2.5(jiti@1.21.3)(rollup@4.34.6)(sass@1.77.4)(typescript@5.4.5)(yaml@2.7.0)
-      preact:
-        specifier: ^10.19.3
-        version: 10.22.0
       sass:
         specifier: ^1.70.0
         version: 1.77.4
