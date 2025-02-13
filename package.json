@@ -13,11 +13,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/cloudflare": "^12.2.1",
-    "@astrojs/preact": "^4.0.4",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/svelte": "^7.0.4",
     "@astrojs/tailwind": "^6.0.0",
-    "@astrojs/vercel": "^8.0.6",
     "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource-variable/orbitron": "^5.0.18",
     "@fontsource-variable/outfit": "^5.0.8",

@@ -4,8 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 import svelte from "@astrojs/svelte";
 
-import preact from "@astrojs/preact";
-
 import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
@@ -19,7 +17,6 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     svelte(),
-    preact(),
     sitemap(),
   ],
   i18n: {
