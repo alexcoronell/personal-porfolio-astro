@@ -71,11 +71,7 @@ import { personalData } from "../../core/data/personalData";
 
 <style>
   .ContactSocialMedia {
-    @apply pt-20 pb-5 lg:py-0 opacity-0 translate-y-[25%];
-    animation: animationFadeInTranslate linear forwards;
-    animation-timeline: view();
-    animation-range-start: 10%;
-    animation-range-end: 35%;
+    @apply pt-20 pb-5 lg:py-0 md:opacity-0 md:translate-y-[25%];
     ul {
       @apply m-0 p-0 
       flex items-center justify-center gap-x-5
@@ -160,6 +156,14 @@ import { personalData } from "../../core/data/personalData";
           }
         }
       }
+    }
+  }
+  @media (min-width: 768px) {
+    .ContactSocialMedia {
+      animation: animationFadeInTranslate linear forwards;
+      animation-timeline: view();
+      animation-range-start: 10%;
+      animation-range-end: 35%;
     }
   }
 </style>
