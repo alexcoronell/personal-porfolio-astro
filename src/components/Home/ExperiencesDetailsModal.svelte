@@ -1,5 +1,5 @@
 <script>
-  import ModalLayout from "../Shared/ModalLayout.svelte";
+  import ModalLayout from "../../layouts/ModalLayout.svelte";
   import CloseIcon from "../UI/icons/CloseIcon.svelte";
   import ExperiencesDetails from "./ExperiencesDetails.svelte";
   import { isVisibleModalExperience, hideModalExperience } from "../../stores/store";
