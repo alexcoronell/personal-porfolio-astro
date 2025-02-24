@@ -116,7 +116,7 @@ const retcaFunctions = [
 
 const tecnocorsaFunctions = [
   "Generación e impresión de facturas.",
-  "Operador Santo Administrativo.",
+  "Operador Saint Administrativo.",
   "Relación de compras y ventas para el cálculo del pago del I.S.L.V. (I.V.A.).",
   "Rellenar formularios de pago de impuestos.",
 ];
