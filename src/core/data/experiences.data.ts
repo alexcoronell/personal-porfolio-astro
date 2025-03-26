@@ -13,7 +13,7 @@ export const experiences: Experience[] = [
       "Developer of an automated shopping bot using ElectronJS.",
       "Full-stack developer of a CMR solution for managing customers, leads, and generating quotes. Under development with NestJS, Angular, and Postgres.",
       "Domain and hosting administration.",
-      "SuiteCRM CRM system administration.",
+      "Administration of Zoho CRM and SuiteCRM systems.",
       "AWS Administration.",
     ],
   },
