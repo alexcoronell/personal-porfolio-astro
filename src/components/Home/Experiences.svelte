@@ -6,7 +6,7 @@
     setCurrentExperience,
     currentExperienceStoreIndex,
     showModalExperience,
-    isVisibleModalExperience
+    isVisibleModalExperience,
   } from "../../stores/store";
   import { onMount } from "svelte";
 
@@ -24,9 +24,8 @@
     setCurrentExperience(index);
     if (width < 768) {
       showModalExperience();
-      console.log(index, width, $isVisibleModalExperience);
     }
-  }
+  };
 </script>
 
 <section class="Experiences">
@@ -43,8 +42,8 @@
       </button>
     {/each}
   </div>
-  <div class="Experiences__details" >
-      <ExperiencesDetails />
+  <div class="Experiences__details">
+    <ExperiencesDetails />
   </div>
 </section>
 
