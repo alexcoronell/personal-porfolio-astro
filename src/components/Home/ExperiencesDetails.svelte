@@ -1,6 +1,6 @@
 <script lang="ts">
   import { currentExperienceStore } from "../../stores/store";
-</script>   
+</script>
 
 <article class="ExperiencesDetails">
   <div class="ExperiencesDetails__header">
@@ -17,20 +17,21 @@
     <ul>
       {#each $currentExperienceStore?.functions ?? [] as functionExperience}
         <li>
-            <span class="icon-[material-symbols--double-arrow]"></span>
-            <p>{functionExperience}</p>
+          <span class="icon-[material-symbols--double-arrow]"></span>
+          <p>{functionExperience}</p>
         </li>
       {/each}
     </ul>
   </div>
 </article>
 
-
 <style lang="scss">
-    .ExperiencesDetails {
+  .ExperiencesDetails {
+    @apply overflow-y-hidden;
     &__header {
       @apply flex flex-wrap gap-x-2;
-      h4, h5 {
+      h4,
+      h5 {
         @apply text-base mb-0;
       }
       h4 {
@@ -48,10 +49,13 @@
     &__functions {
       ul {
         li {
-          @apply grid gap-x-3;
+          @apply grid gap-x-3 mb-0;
           grid-template-columns: 25px auto;
           span {
             @apply text-xl translate-y-1;
+          }
+          p {
+            @apply text-sm mb-0;
           }
         }
       }
