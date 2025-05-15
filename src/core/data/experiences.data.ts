@@ -9,12 +9,12 @@ export const experiences: Experience[] = [
     dateEnd: "Current",
     location: "Medellín, CO",
     functions: [
-      "Web developer of the company's official pages in technologies such as Astro, Angular, and React.",
-      "Developer of an automated shopping bot using ElectronJS.",
-      "Full-stack developer of a CMR solution for managing customers, leads, and generating quotes. Under development with NestJS, Angular, and Postgres.",
-      "Domain and hosting administration.",
-      "Administration of Zoho CRM and SuiteCRM systems.",
-      "AWS Administration.",
+      "Led the design and development of the company's official web platforms, implementing modern solutions with Astro, Angular, Svelte, and React to enhance digital presence and user interaction.",
+      "Designed and developed an automated purchasing bot using ElectronJS, aimed at optimizing internal processes and improving operational efficiency for acquiring ads on the Craigslist platform.",
+      "Played a key Fullstack Developer role in the design and implementation of an internal CRM solution for comprehensive customer lifecycle management (clients, leads, quotes), utilizing NestJS (backend), Angular (frontend), and PostgreSQL (database).",
+      "Managed and administered domains and hosting services, ensuring the availability and performance of the company's web platforms.",
+      "Administered and configured Zoho CRM and SuiteCRM systems, providing technical support and optimizing their usage for sales and customer management teams.",
+      "Administered key services on the AWS platform, maintaining the cloud infrastructure for various applications and services.",
     ],
   },
   {
@@ -25,11 +25,11 @@ export const experiences: Experience[] = [
     dateEnd: "July 2021",
     location: "Medellín, CO",
     functions: [
-      "Regional IT Manager for the Totto company in Antioquia.",
-      "Helpdesk and on-site support for Grupo Uribe.",
-      "Support for the implementation of Sura's Digital Service Center.",
-      "Technical service for laser printers, desktop and laptop computers.",
-      "Customer service.",
+      "Managed IT operations and support as the Regional IT Lead for Totto company in Antioquia, ensuring technological continuity and user satisfaction in the region.",
+      "Provided comprehensive technical support (Helpdesk and on-site) to Grupo Uribe users, resolving hardware, software, and network issues to maintain productivity.",
+      "Actively supported the implementation of Sura's Digital Service Center, providing crucial technical support and facilitating the transition to new digital platforms.",
+      "Performed technical service (diagnosis, repair, and maintenance) for laser printers, desktop computers, and laptops, ensuring the proper functioning of the equipment.",
+      "Provided exceptional customer service, addressing and resolving users' technical needs with a focus on satisfaction and effective communication.",
     ],
   },
   {
@@ -40,11 +40,9 @@ export const experiences: Experience[] = [
     dateEnd: "December 2017",
     location: "Medellín, CO",
     functions: [
-      "Prepare and assemble designs for the digital printing process.",
-      "Use Adobe Illustrator, Adobe InDesign, Adobe Acrobat, Adobe Photoshop, Enfocus PitStop Pro, and Kodak Preps 5.3.",
-      "Operate the Konica Job Center Controller and Fiery Command Workstation.",
-      "Operate Konica Minolta Bizhub Press C6000 and Konica Minolta Bizhub Press C1085 printing equipment.",
-      "Perform preventive and corrective maintenance on Konica Minolta Bizhub Press C6000 and Konica Minolta Bizhub Press C1085 printers.",
+      "Prepared and optimized graphic files for digital printing, utilizing industry-standard software such as Adobe Creative Suite, Enfocus PitStop Pro, and Kodak Preps 5.3.",
+      "Operated and managed workflows on high-production digital printing equipment (Konica Minolta Bizhub Press C6000/C1085), utilizing their controllers and workstations (Konica Job Center, Fiery Command).",
+      "Performed preventive and corrective maintenance on digital printing equipment, diagnosing and troubleshooting technical issues to ensure production quality and efficiency.",
     ],
   },
   {
@@ -55,9 +53,8 @@ export const experiences: Experience[] = [
     dateEnd: "December 2016",
     location: "Envigado, CO",
     functions: [
-      "Repair and maintenance of Ricoh, Konica Minolta and Sindoh printers.",
-      "Installation of printers on corporate networks.",
-      "Configuration of basic and multifunctional printers on computer equipment.",
+      "Performed specialized technical diagnosis, repair, and maintenance on various printer brands (Ricoh, Konica Minolta, Sindoh), ensuring their optimal functioning.",
+      "Managed the installation and configuration of printers (basic and multifunctional) in corporate network environments and on user computers, ensuring their correct integration and operability.",
     ],
   },
   {
@@ -68,8 +65,8 @@ export const experiences: Experience[] = [
     dateEnd: "February 2016",
     location: "Caracas, VE",
     functions: [
-      "Purchasing and inventory management.",
-      "Coordination in the implementation, installation and start-up of computer equipment acquired by our corporate clients.",
+      "Managed the purchasing and inventory of computer equipment and technology, optimizing available resources.",
+      "Coordinated the integral implementation, installation, and deployment of technological solutions for corporate clients, ensuring smooth and successful transitions.",
     ],
   },
   {
@@ -80,15 +77,9 @@ export const experiences: Experience[] = [
     dateEnd: "January 2014",
     location: "Caracas, VE",
     functions: [
-      "Administration of wired and wireless networks.",
-      "BladeCenter administration.",
-      "Administration of Linux servers, Windows Server 2008, Windows Server 2012 (Active Directory, DHCP Server, Print Server, DNS).",
-      "SQL Server 2008R2 Administration.",
-      "Basic MySQL administration (Backups)",
-      "Printer management.",
-      "Database synchronization.",
-      "Technical support of computer equipment and printers.",
-      "Purchases of consumables and equipment.",
+      "Administered network infrastructure (wired/wireless) and servers (Linux, Windows Server, BladeCenter), managing key services such as Active Directory, DHCP, DNS, and print services.",
+      "Managed and maintained databases (SQL Server 2008R2, MySQL), including backups and synchronization.",
+      "Provided comprehensive technical support for computer equipment and printers, and managed the purchasing of IT consumables and equipment.",
     ],
   },
   {
@@ -99,10 +90,8 @@ export const experiences: Experience[] = [
     dateEnd: "July 2011",
     location: "Caracas, VE",
     functions: [
-      "Production assistant",
-      "Printing and distribution of technical and literal scripts",
-      "Assistance in the video editing process",
-      "Assistance in field interviews",
+      "Supported production logistics, including the organized printing and distribution of production scripts for the team.",
+      "Provided technical and operational assistance in the video editing process and collaborated on the logistics and execution of field interviews.",
     ],
   },
   {
@@ -113,13 +102,9 @@ export const experiences: Experience[] = [
     dateEnd: "November 2010",
     location: "Caracas, VE",
     functions: [
-      "In charge of the Systems Department in the branch and the generation and printing of invoices and credit and debit notes in the Samsung, Aiwa, Haier, Scott-Tamashi lines.",
-      "Operator of HP3000 and PeopleSoft-JDE systems.",
-      "Technical support for users.",
-      "Repair and maintenance of computer equipment.",
-      "Assistant in the administration of local, remote and wireless networks.",
-      "Router Administration.",
-      "Preventive and corrective maintenance of printers",
+      "Responsible for branch systems operations, including operating systems (HP3000, PeopleSoft-JDE) and managing commercial documents (invoicing, credit/debit notes).",
+      "Provided comprehensive technical support to users and performed diagnosis, repair, and maintenance of computer equipment and printers.",
+      "Assisted in network administration (local, remote, wireless) and managed the branch router.",
     ],
   },
   {
@@ -130,10 +115,9 @@ export const experiences: Experience[] = [
     dateEnd: "December 2003",
     location: "Caracas, VE",
     functions: [
-      "Generation and printing of invoices.",
-      "Administrative Saint Operator.",
-      "List of purchases and sales for the calculation of the payment of I.S.L.V. (Salex tax).",
-      "Filling out tax payment forms.",
+      "Provided basic technical support and performed maintenance for computer equipment used for administrative operations, ensuring their operability.",
+      "Operated the Saint Administrativo system, responsible for generating and printing invoices and managing related commercial documents.",
+      "Processed sales and purchase information for tax calculations (I.S.L.V./I.V.A.) and prepared tax payment forms.",
     ],
   },
   {
@@ -144,11 +128,8 @@ export const experiences: Experience[] = [
     dateEnd: "December 1997",
     location: "Caracas, VE",
     functions: [
-      "Coding of folders for later loading into the computerized accounting system.",
-      "Accounting system operator.",
-      "Bank reconciliation.",
-      "File of purchase and sale invoices.",
-      "Relationship for the payment of I.S.L.V. (Sales tax)",
+      "Responsible for the operation of the accounting system, including the coding and entry of administrative data and documents.",
+      "Performed basic accounting and administrative support tasks, such as bank reconciliations and invoice filing.",
     ],
   },
 ];

@@ -9,12 +9,12 @@ export const experiencias: Experience[] = [
     dateEnd: "Actualmente",
     location: "Medellín, CO",
     functions: [
-      "Desarrollador web de las páginas oficiales de la empresa en tecnologías como Astro, Angular y React.",
-      "Desarrollador de un robot de compras automatizado utilizando ElectronJS.",
-      "Desarrollador completo de una solución CMR para gestionar clientes, clientes potenciales y generar cotizaciones. En desarrollo con NestJS, Angular y Postgres.",
-      "Administración de dominios y hosting.",
-      "Administración de los sistemas Zoho CRM y SuiteCRM.",
-      "Administración de AWS.",
+      "Lideré el diseño y desarrollo de las plataformas web oficiales de la empresa, implementando soluciones modernas con Astro, Angular, Svelte y React para mejorar la presencia digital y la interacción con los usuarios.",
+      "Diseñé y desarrollé un robot de compras automatizado utilizando ElectronJS, con el objetivo de optimizar procesos internos y mejorar la eficiencia operativa en la adquisición de anuncios en la plataforma Craigslist.",
+      "Desarrollador Fullstack clave en el diseño e implementación de una solución CRM interna para la gestión integral del ciclo de vida del cliente (clientes, leads, cotizaciones). Utilizando NestJS para el backend, Angular para el frontend y PostgreSQL para la base de datos.",
+      "Gestioné y administré dominios y servicios de hosting, garantizando la disponibilidad y el rendimiento de las plataformas web de la empresa.",
+      "Administré y configuré los sistemas Zoho CRM y SuiteCRM, proporcionando soporte técnico y optimizando su uso para los equipos comerciales y de gestión de clientes.",
+      "Administré servicios clave en la plataforma AWS, manteniendo la infraestructura en la nube para diversas aplicaciones y servicios.",
     ],
   },
   {
@@ -25,11 +25,11 @@ export const experiencias: Experience[] = [
     dateEnd: "Julio 2021",
     location: "Medellín, CO",
     functions: [
-      "Gerente Regional de TI de la empresa Totto en Antioquia.",
-      "Helpdesk y soporte en sitio para Grupo Uribe.",
-      "Apoyo a la implementación del Centro de Servicios Digitales de Sura.",
-      "Servicio técnico para impresoras láser, ordenadores de sobremesa y portátiles.",
-      "Servicio al Cliente.",
+      "Gestioné la operación y el soporte de TI como Encargado Regional para la empresa Totto en Antioquia, asegurando la continuidad tecnológica y la satisfacción de los usuarios en la región.",
+      "Proporcioné soporte técnico integral (Helpdesk y en sitio) a los usuarios de Grupo Uribe, resolviendo incidencias de hardware, software y red para mantener la productividad.",
+      "Apoyé activamente la implementación del Centro de Servicios Digitales de Sura, brindando soporte técnico crucial y facilitando la transición hacia nuevas plataformas digitales.",
+      "Realicé diagnóstico, reparación y mantenimiento (servicio técnico) de impresoras láser, ordenadores de sobremesa y portátiles, asegurando el correcto funcionamiento del equipamiento.",
+      "Brindé un servicio al cliente excepcional, atendiendo y resolviendo las necesidades técnicas de los usuarios con un enfoque en la satisfacción y la comunicación efectiva.",
     ],
   },
   {
@@ -40,11 +40,9 @@ export const experiencias: Experience[] = [
     dateEnd: "Diciembre 2017",
     location: "Medellín, CO",
     functions: [
-      "Preparación y ajuste de diseños para el proceso de impresión digital.",
-      "Uso de Adobe Illustrator, Adobe InDesign, Adobe Acrobat, Adobe Photoshop, Enfocus PitStop Pro y Kodak Preps 5.3.",
-      "Uso del controlador Konica Job Center y la estación de trabajo Fiery Command.",
-      "Operación de equipos de impresión Konica Minolta Bizhub Press C6000 y Konica Minolta Bizhub Press C1085.",
-      "Realización de mantenimiento preventivo y correctivo en las impresoras Konica Minolta Bizhub Press C6000 y Konica Minolta Bizhub Press C1085.",
+      "Preparé y optimicé archivos gráficos para impresión digital, utilizando software estándar de la industria como Adobe Creative Suite, Enfocus PitStop Pro y Kodak Preps 5.3.",
+      "Operé y gestioné flujos de trabajo en equipos de impresión digital de alta producción (Konica Minolta Bizhub Press C6000/C1085), utilizando sus controladores y estaciones de trabajo (Konica Job Center, Fiery Command).",
+      "Realicé mantenimiento preventivo y correctivo en equipos de impresión digital, diagnosticando y solucionando problemas técnicos para asegurar la calidad y eficiencia de la producción.",
     ],
   },
   {
@@ -55,9 +53,8 @@ export const experiencias: Experience[] = [
     dateEnd: "Diciembre 2016",
     location: "Envigado, CO",
     functions: [
-      "Reparación y mantenimiento de impresoras Ricoh, Konica Minolta y Sindoh.",
-      "Instalación de impresoras en redes corporativas.",
-      "Configuración de impresoras básicas y multifuncionales en equipos informáticos.",
+      "Realicé diagnóstico, reparación y mantenimiento técnico especializado en impresoras de diversas marcas (Ricoh, Konica Minolta, Sindoh), asegurando su óptimo funcionamiento.",
+      "Gestioné la instalación y configuración de impresoras (básicas y multifuncionales) en entornos de redes corporativas y en equipos informáticos de los usuarios, garantizando su correcta integración y operatividad",
     ],
   },
   {
@@ -68,8 +65,8 @@ export const experiencias: Experience[] = [
     dateEnd: "Febrero 2016",
     location: "Caracas, VE",
     functions: [
-      "Gestión de compras e inventarios.",
-      "Coordinación en la implementación, instalación y puesta en marcha de los equipos de computación y tecnología adquiridos por nuestros clientes corporativos.",
+      "Gestioné las compras y el inventario de equipos de computación y tecnología, optimizando los recursos disponibles.",
+      "Coordiné la implementación integral, instalación y puesta en marcha de soluciones tecnológicas para clientes corporativos, garantizando transiciones fluidas y exitosas.",
     ],
   },
   {
@@ -80,15 +77,9 @@ export const experiencias: Experience[] = [
     dateEnd: "Enero 2014",
     location: "Caracas, VE",
     functions: [
-      "Administración de redes cableadas e inalámbricas.",
-      "Administración de BladeCenter.",
-      "Administración de servidores Linux, Windows Server 2008, Windows Server 2012 (Active Directory, Servidor DHCP, Servidor de Impresión, DNS).",
-      "Administración de SQL Server 2008R2.",
-      "Administración básica de MySQL (Copias de seguridad)",
-      "Gestión de impresoras.",
-      "Sincronización de bases de datos.",
-      "Soporte técnico de equipos de cómputo e impresoras.",
-      "Compras de consumibles y equipos.",
+      "Administré la infraestructura de red (cableada/inalámbrica) y servidores (Linux, Windows Server, BladeCenter), gestionando servicios clave como Active Directory, DHCP, DNS e impresión.",
+      "Gestioné y mantuve bases de datos (SQL Server 2008R2, MySQL), incluyendo la realización de copias de seguridad y sincronización.",
+      "Proporcioné soporte técnico integral a equipos de cómputo e impresoras, y gestioné las compras de consumibles y equipamiento de TI",
     ],
   },
   {
@@ -99,10 +90,8 @@ export const experiencias: Experience[] = [
     dateEnd: "Julio 2011",
     location: "Caracas, VE",
     functions: [
-      "Asistente de producción",
-      "Impresión y distribución de guiones técnicos y literales",
-      "Asistencia en el proceso de edición de vídeo",
-      "Asistencia en entrevistas de campo",
+      "Apoyé la gestión logística de la producción, incluyendo la impresión y distribución organizada de guiones técnicos y literales para el equipo de trabajo.",
+      "Brindé asistencia técnica y operativa en el proceso de edición de video y colaboré en la logística y realización de entrevistas de campo.",
     ],
   },
   {
@@ -113,13 +102,9 @@ export const experiencias: Experience[] = [
     dateEnd: "Noviembre 2010",
     location: "Caracas, VE",
     functions: [
-      "Encargado del Departamento de Sistemas en sucursal y de la generación e impresión de facturas y notas de crédito y débito en las líneas Samsung, Aiwa, Haier, Scott-Tamashi.",
-      "Operador de sistemas HP3000 y PeopleSoft-JDE.",
-      "Soporte técnico para usuarios.",
-      "Reparación y mantenimiento de equipos informáticos.",
-      "Asistente en la administración de redes locales, remotas e inalámbricas.",
-      "Administración del enrutador.",
-      "Mantenimiento preventivo y correctivo de impresoras",
+      "Responsable de la operación del departamento de sistemas en sucursal, incluyendo la operación de sistemas (HP3000, PeopleSoft-JDE) y la gestión de documentos comerciales (facturación, notas de crédito/débito).",
+      "Proporcioné soporte técnico integral a usuarios y realicé el diagnóstico, reparación y mantenimiento de equipos informáticos e impresoras.",
+      "Asistí en la administración de redes (locales, remotas, inalámbricas) y la gestión del enrutador de la sucursal.",
     ],
   },
   {
@@ -130,10 +115,9 @@ export const experiencias: Experience[] = [
     dateEnd: "Diciembre 2003",
     location: "Caracas, VE",
     functions: [
-      "Generación e impresión de facturas.",
-      "Operador Santo Administrativo.",
-      "Relación de compras y ventas para el cálculo del pago del I.S.L.V. (I.V.A.).",
-      "Rellenar formularios de pago de impuestos.",
+      "Proporcioné soporte técnico básico y realicé mantenimiento a los equipos de cómputo utilizados para las operaciones administrativas, asegurando su operatividad.",
+      "Operé el sistema Saint Administrativo, responsable de la generación e impresión de facturas y la gestión de documentos comerciales relacionados",
+      "Procesé información de compras y ventas para cálculos fiscales (I.S.L.V./I.V.A.) y preparé formularios para el pago de impuestos.",
     ],
   },
   {
@@ -144,11 +128,8 @@ export const experiencias: Experience[] = [
     dateEnd: "Diciembre 1997",
     location: "Caracas, VE",
     functions: [
-      "Codificación de carpetas para su posterior carga en el sistema contable computarizado.",
-      "Operador del sistema de contabilidad.",
-      "Conciliación bancaria.",
-      "Archivo de facturas de compra y venta.",
-      "Relación para el pago del I.S.L.V. (Impuesto sobre las ventas)",
+      "Responsable de la operación del sistema de contabilidad, incluyendo la codificación y carga de datos y documentos administrativos.",
+      "Realicé tareas de apoyo contable y administrativo básico, como conciliaciones bancarias y archivo de facturas.",
     ],
   },
 ];
