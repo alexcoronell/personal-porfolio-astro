@@ -1,89 +1,90 @@
 ---
 /* Components */
-import MenuIcon from "../UI/icons/MenuIcon.astro";
-import CloseIcon from "../UI/icons/CloseIcon.astro";
-import SpainFlagIcon from "../UI/icons/SpainFlagIcon.astro";
-import UsaFlagIcon from "../UI/icons/UsaFlagIcon.astro";
+import MenuIcon from '../UI/icons/MenuIcon.astro';
+import CloseIcon from '../UI/icons/CloseIcon.astro';
+import SpainFlagIcon from '../UI/icons/SpainFlagIcon.astro';
+import UsaFlagIcon from '../UI/icons/UsaFlagIcon.astro';
 
 /* Utils */
-import { getLangFromUrl } from "../../i18n/utils";
-import { translateMenu } from "../../i18n/translate";
+import { getLangFromUrl } from '../../i18n/utils';
+import { translateMenu } from '../../i18n/translate';
 
 /* Models */
-import type { MenuItem } from "../../core/models/MenuItem.interface";
+import type { MenuItem } from '../../core/models/MenuItem.interface';
 
 const lang = getLangFromUrl(Astro.url);
 
 const menuItems: MenuItem[] = translateMenu(lang);
 
-let resumeName = "";
-let resumeUrl = "";
+let resumeName = '';
+let resumeUrl = '';
 
-if (lang === "es") {
-  resumeName = "Hoja de Vida";
-  resumeUrl = "/assets/resume/Hoja-de-Vida.pdf";
+if (lang === 'es') {
+  resumeName = 'Hoja de Vida';
+  resumeUrl = '/assets/resume/Hoja-de-Vida.pdf';
 } else {
-  resumeName = "Resume";
-  resumeUrl = "/assets/resume/CV-Resume.pdf";
+  resumeName = 'Resume';
+  resumeUrl = '/assets/resume/CV-Resume.pdf';
 }
 ---
 
-<div class="MainMenu p-3">
+<div class='MainMenu p-3'>
   <button
-    type="button"
-    id="open-menu-button"
-    class="lg:hidden"
-    role="button"
-    aria-label="Open the menu"
-    ><MenuIcon class="size-10" /><span class="sr-only">Open the menu</span
+    type='button'
+    id='open-menu-button'
+    class='lg:hidden'
+    role='button'
+    aria-label='Open the menu'
+    ><MenuIcon class='size-10' /><span class='sr-only'>Open the menu</span
     ></button
   >
-  <div class="blurFilter filter hiddenFilter" id="filter"></div>
-  <nav id="menu" class="menu hidden-menu">
-    <div class="areaCloseMenuButton">
+  <div class='blurFilter filter hiddenFilter' id='filter'></div>
+  <nav id='menu' class='menu hidden-menu'>
+    <div class='areaCloseMenuButton'>
       <button
-        type="button"
-        id="close-menu-button"
-        role="button"
-        aria-label="Close the menu"
-        ><CloseIcon class="size-10" />
-        <span class="sr-only">Close the menu</span>
+        type='button'
+        id='close-menu-button'
+        role='button'
+        aria-label='Close the menu'
+        ><CloseIcon class='size-10' />
+        <span class='sr-only'>Close the menu</span>
       </button>
     </div>
-    <div class="menuItems">
+    <div class='menuItems'>
       {
         menuItems.map((item, index) => (
           <a
-            class="MainMenuItem"
-            href={"#" + item.url}
+            class='MainMenuItem'
+            href='#'
+            data-scroll-to={item.url}
             aria-label={`Go to ${item.name} section`}
           >
-            <span class="index">0{index + 1}.</span>
-            <span class="name transitionAc">{item.name}</span>
-            <span class="sr-only">Go to {item.name} section</span>
+            <span class='index'>0{index + 1}.</span>
+            <span class='name transitionAc'>{item.name}</span>
+            <span class='sr-only'>Go to {item.name} section</span>
           </a>
         ))
       }
       <a
         href={resumeUrl}
-        target="_blank"
-        class="navResumeButton btn-primary"
+        target='_blank'
+        class='navResumeButton btn-primary'
         download={`${resumeName}.pdf`}
         aria-label={`Download my ${resumeName}`}
         >{resumeName}
-        <span class="sr-only">Download my {resumeName}</span>
+        <span class='sr-only'>Download my {resumeName}</span>
       </a>
-      <div class="languageMenu">
+      <div class='languageMenu'>
         <a
-          href="es"
-          id="spainFlagIcon"
-          arial-label="Cambia el lenguaje a español"
-          ><SpainFlagIcon /><span class="sr-only"
+          href='es'
+          id='spainFlagIcon'
+          arial-label='Cambia el lenguaje a español'
+          ><SpainFlagIcon /><span class='sr-only'
             >Cambia el lenguaje a español</span
           ></a
         >
-        <a href="/" id="usaFlagIcon" arial-label="Change language to English"
-          ><UsaFlagIcon /><span class="sr-only">Change language to English</span
+        <a href='/' id='usaFlagIcon' arial-label='Change language to English'
+          ><UsaFlagIcon /><span class='sr-only'>Change language to English</span
           ></a
         >
       </div>
@@ -92,47 +93,100 @@ if (lang === "es") {
 </div>
 
 <script is:inline>
-  const openMenuButton = document.getElementById("open-menu-button");
-  const closeMenuButton = document.getElementById("close-menu-button");
-  const spainFlagIcon = document.getElementById("spainFlagIcon");
-  const usaFlagIcon = document.getElementById("usaFlagIcon");
-  const menu = document.getElementById("menu");
-  const filter = document.getElementById("filter");
-  const mainMenuItem = document.querySelectorAll(".MainMenuItem");
+  const openMenuButton = document.getElementById('open-menu-button');
+  const closeMenuButton = document.getElementById('close-menu-button');
+  const spainFlagIcon = document.getElementById('spainFlagIcon');
+  const usaFlagIcon = document.getElementById('usaFlagIcon');
+  const menu = document.getElementById('menu');
+  const filter = document.getElementById('filter');
+  const mainMenuItem = document.querySelectorAll('.MainMenuItem');
   let hiddenMenu = true;
-  const pathName = window.location.pathname.replace("/", "");
-  const lang = pathName === "es" ? "es" : "en";
+  const pathName = window.location.pathname.replace('/', '');
+  const lang = pathName === 'es' ? 'es' : 'en';
+  const smoothScrollLinks = document.querySelectorAll('a[data-scroll-to]');
+  const SCROLL_DURATION = 800;
 
-  openMenuButton?.addEventListener("click", () => toggleMenu(false));
+  openMenuButton?.addEventListener('click', () => toggleMenu(false));
 
-  closeMenuButton?.addEventListener("click", () => toggleMenu(true));
+  closeMenuButton?.addEventListener('click', () => toggleMenu(true));
 
   mainMenuItem.forEach((element) => {
-    element?.addEventListener("click", () => toggleMenu(true));
+    element?.addEventListener('click', () => toggleMenu(true));
   });
+
+  const easeInOutQuad = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  };
 
   toggleMenu = (toggle) => {
     hiddenMenu = toggle;
     if (hiddenMenu) {
-      menu?.classList.add("hidden-menu");
-      filter?.classList.add("hiddenFilter");
-      filter?.classList.remove("showFilter");
+      menu?.classList.add('hidden-menu');
+      filter?.classList.add('hiddenFilter');
+      filter?.classList.remove('showFilter');
     } else {
-      menu?.classList.remove("hidden-menu");
-      filter?.classList.remove("hiddenFilter");
-      filter?.classList.add("showFilter");
+      menu?.classList.remove('hidden-menu');
+      filter?.classList.remove('hiddenFilter');
+      filter?.classList.add('showFilter');
     }
   };
 
   changeLanguageIcons = () => {
-    if (lang === "es") {
-      spainFlagIcon.style.display = "none";
-      usaFlagIcon.style.display = "block";
+    if (lang === 'es') {
+      spainFlagIcon.style.display = 'none';
+      usaFlagIcon.style.display = 'block';
     } else {
-      spainFlagIcon.style.display = "block";
-      usaFlagIcon.style.display = "none";
+      spainFlagIcon.style.display = 'block';
+      usaFlagIcon.style.display = 'none';
     }
   };
+
+  smoothScrollLinks.forEach((link) => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // Previene el cambio de URL
+
+      const targetId = this.getAttribute('data-scroll-to');
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const startPosition = window.pageYOffset;
+        const targetPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          (document.querySelector('nav')
+            ? document.querySelector('nav').offsetHeight
+            : 0);
+
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animateScroll(currentTime) {
+          if (startTime === null) startTime = currentTime;
+          const elapsedTime = currentTime - startTime;
+
+          const actualElapsedTime = Math.min(elapsedTime, SCROLL_DURATION);
+
+          const newPosition = easeInOutQuad(
+            actualElapsedTime,
+            startPosition,
+            distance,
+            SCROLL_DURATION
+          );
+
+          window.scrollTo(0, newPosition);
+
+          if (elapsedTime < SCROLL_DURATION) {
+            requestAnimationFrame(animateScroll);
+          }
+        }
+
+        requestAnimationFrame(animateScroll);
+      }
+    });
+  });
 
   changeLanguageIcons();
 </script>
@@ -179,10 +233,10 @@ if (lang === "es") {
     @apply flex flex-col items-center justify-center lg:flex-row gap-x-2 mx-3;
 
     .index {
-      font-family: "Fira Mono", sans-serif;
+      font-family: 'Fira Mono', sans-serif;
     }
     .name {
-      font-family: "Orbitron Variable", sans-serif;
+      font-family: 'Orbitron Variable', sans-serif;
       @apply text-white/70 hover:text-primary;
     }
   }
