@@ -1,40 +1,59 @@
 ---
 /* Types */
-import { type MenuItem } from "../../core/models/MenuItem.interface";
-import { type PersonalData } from "../../core/types/PersonalData";
+import type { MenuItem } from '../../core/models/MenuItem.interface';
 
 /* Utils */
-import { getLangFromUrl } from "../../i18n/utils";
-import { translate, translateMenu } from "../../i18n/translate";
+import { getLangFromUrl } from '../../i18n/utils';
+import { translateMenu } from '../../i18n/translate';
 
 /* Data */
-import { personalData } from "../../core/data/personalData";
+import { personalData } from '../../core/data/personalData';
 
 const lang = getLangFromUrl(Astro.url);
 const menu: MenuItem[] = translateMenu(lang);
 const worksId = menu[3].url;
 
-let title = "Hi, my name is";
-let text = "Know my works";
+let title = 'Hi, my name is';
+let text = 'Know my works';
 let shortPresentation =
-  "20+ years in IT | 5+ Years Fullstack & Frontend Development Expert. I specialize in creating robust web applications and dynamic user interfaces with Angular, React, and Astro.js. Explore my portfolio to see how I can bring your next project to life.";
+  '20+ years in IT | 5+ Years Fullstack & Frontend Development Expert. I specialize in creating robust web applications and dynamic user interfaces with Angular, React, and Astro.js. Explore my portfolio to see how I can bring your next project to life.';
 
-if (lang === "es") {
-  title = "Hola, mi nombre es";
-  text = "Conoce mi trabajo";
+if (lang === 'es') {
+  title = 'Hola, mi nombre es';
+  text = 'Conoce mi trabajo';
   shortPresentation =
-    "Más de 20 años en TI | 5+ años Experto en Desarrollo Fullstack y Frontend. Soy experto en crear aplicaciones web robustas y interfaces de usuario dinámicas con Angular, React y Astro.js. Descubre mi portafolio para ver cómo puedo materializar tu próximo proyecto.";
+    'Más de 20 años en TI | 5+ años Experto en Desarrollo Fullstack y Frontend. Soy experto en crear aplicaciones web robustas y interfaces de usuario dinámicas con Angular, React y Astro.js. Descubre mi portafolio para ver cómo puedo materializar tu próximo proyecto.';
 }
 ---
 
-<div class="Presentation">
-  <div class="Presentation__content">
+<div class='Presentation'>
+  <div class='Presentation__content'>
     <h5>{title}</h5>
     <h1>{personalData.shortname}.</h1>
     <p>{shortPresentation}</p>
-    <a href={"#" + worksId} class="btn-primary">{text}!</a>
+    <a href={'#' + worksId} id='know-my-works-btn' class='btn-primary'
+      >{text}!</a
+    >
   </div>
 </div>
+
+<script is:inline>
+  const knowMyWorksBtn = document.getElementById('know-my-works-btn');
+  knowMyWorksBtn.addEventListener('click', (e) => {
+    const width = window.innerWidth;
+    if (width < 1200) return;
+    e.preventDefault();
+    const targetElement = document.getElementById('Works');
+    console.log(targetId);
+    console.log(targetElement);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  });
+</script>
 
 <style>
   .Presentation {

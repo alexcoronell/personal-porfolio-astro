@@ -104,7 +104,7 @@ if (lang === 'es') {
   const pathName = window.location.pathname.replace('/', '');
   const lang = pathName === 'es' ? 'es' : 'en';
   const smoothScrollLinks = document.querySelectorAll('a[data-scroll-to]');
-  
+
   openMenuButton?.addEventListener('click', () => toggleMenu(false));
 
   closeMenuButton?.addEventListener('click', () => toggleMenu(true));
@@ -138,8 +138,8 @@ if (lang === 'es') {
 
   smoothScrollLinks.forEach((link) => {
     link.addEventListener('click', function (event) {
-      const width = window.innerWidth()
-      if(width < 1200) return;
+      const width = window.innerWidth;
+      if (width < 1200) return;
 
       event.preventDefault();
 
