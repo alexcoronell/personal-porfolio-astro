@@ -4,9 +4,14 @@ interface Props {
   location: string;
 }
 
-const description =
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const enDescription =
   'Fullstack & Frontend Developer expert in building robust web applications and dynamic user interfaces. Explore my portfolio and projects.';
-//const spanishDescription: 'Desarrollador Fullstack & Frontend experto en la creación de aplicaciones web robustas e interfaces de usuario dinámicas. Explora mi portafolio y proyectos.'
+const esDescription =
+  'Desarrollador Fullstack & Frontend experto en la creación de aplicaciones web robustas e interfaces de usuario dinámicas. Explora mi portafolio y proyectos.';
 
 export const SPANISH_SEO_KEYWORDS: string[] = [
   'Desarrollador Frontend',
@@ -90,7 +95,12 @@ export const ENGLISH_SEO_KEYWORDS: string[] = [
   'Web Projects',
 ];
 
-const keywords = ENGLISH_SEO_KEYWORDS.join(', ');
+const metadescription = lang === 'es' ? esDescription : enDescription;
+
+const keywords =
+  lang === 'es'
+    ? SPANISH_SEO_KEYWORDS.join(', ')
+    : ENGLISH_SEO_KEYWORDS.join(', ');
 
 const { title, location } = Astro.props;
 
@@ -122,7 +132,7 @@ import { personalData } from '../../core/data/personalData';
   <meta name='site_name' content={personalData.site} />
   <meta name='author' content={personalData.shortname} />
   <meta name='url' content={location} />
-  <meta name='description' content={description} />
+  <meta name='description' content={metadescription} />
   <meta name='keywords' content={keywords} />
   <link rel='canonical' href={location} />
   <meta name='viewport' content='width=device-width' />
@@ -136,6 +146,6 @@ import { personalData } from '../../core/data/personalData';
   <meta property='og:site_name' content={personalData.site} />
   <meta property='”og:title”' content={title} />
   <meta property='og:url' content={location} />
-  <meta property='”og:description”' content={description} />
+  <meta property='”og:description”' content={metadescription} />
   <title>{title}</title>
 </head>
