@@ -12,6 +12,7 @@ export const experiencias: Experience[] = [
       "Lideré el diseño y desarrollo de las plataformas web oficiales de la empresa, implementando soluciones modernas con Astro, Angular, Svelte y React para mejorar la presencia digital y la interacción con los usuarios.",
       "Diseñé y desarrollé un robot de compras automatizado utilizando ElectronJS, con el objetivo de optimizar procesos internos y mejorar la eficiencia operativa en la adquisición de anuncios en la plataforma Craigslist.",
       "Desarrollador Fullstack clave en el diseño e implementación de una solución CRM interna para la gestión integral del ciclo de vida del cliente (clientes, leads, cotizaciones). Utilizando NestJS para el backend, Angular para el frontend y PostgreSQL para la base de datos.",
+      "Gestioné el mantenimiento y el desarrollo de nuevas funcionalidades para aplicaciones Python.",
       "Gestioné y administré dominios y servicios de hosting, garantizando la disponibilidad y el rendimiento de las plataformas web de la empresa.",
       "Administré y configuré los sistemas Zoho CRM y SuiteCRM, proporcionando soporte técnico y optimizando su uso para los equipos comerciales y de gestión de clientes.",
       "Administré servicios clave en la plataforma AWS, manteniendo la infraestructura en la nube para diversas aplicaciones y servicios.",
