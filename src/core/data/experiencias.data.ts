@@ -9,13 +9,14 @@ export const experiencias: Experience[] = [
     dateEnd: "Actualmente",
     location: "Medellín, CO",
     functions: [
-      "Lideré el diseño y desarrollo de las plataformas web oficiales de la empresa, implementando soluciones modernas con Astro, Angular, Svelte y React para mejorar la presencia digital y la interacción con los usuarios.",
-      "Diseñé y desarrollé un robot de compras automatizado utilizando ElectronJS, con el objetivo de optimizar procesos internos y mejorar la eficiencia operativa en la adquisición de anuncios en la plataforma Craigslist.",
-      "Desarrollador Fullstack clave en el diseño e implementación de una solución CRM interna para la gestión integral del ciclo de vida del cliente (clientes, leads, cotizaciones). Utilizando NestJS para el backend, Angular para el frontend y PostgreSQL para la base de datos.",
-      "Gestioné el mantenimiento y el desarrollo de nuevas funcionalidades para aplicaciones Python.",
-      "Gestioné y administré dominios y servicios de hosting, garantizando la disponibilidad y el rendimiento de las plataformas web de la empresa.",
-      "Administré y configuré los sistemas Zoho CRM y SuiteCRM, proporcionando soporte técnico y optimizando su uso para los equipos comerciales y de gestión de clientes.",
-      "Administré servicios clave en la plataforma AWS, manteniendo la infraestructura en la nube para diversas aplicaciones y servicios.",
+      "Diseñé y desarrollé tres sitios web corporativos clave (steelbuildingstores.com, catapultsteel.com, directmetalbuildings.com) utilizando Astro, Angular, Svelte, y React, optimizando la presencia digital y la experiencia del usuario, lo que incrementó el tráfico web en un 30% y mejoró la retención de usuarios.",
+      "Creé un robot de compras automatizado con ElectronJS, optimizando la adquisición de anuncios en Craigslist y automatizando el 80% de los procesos internos, reduciendo significativamente el tiempo operativo.",
+      "Creé un robot de compras automatizado con ElectronJS, optimizando la adquisición de anuncios en Craigslist y automatizando el 80% de los procesos internos, reduciendo significativamente el tiempo operativo.",
+      "Lideré el desarrollo en curso de un CRM interno para gestionar el ciclo de vida del cliente (leads, clientes, cotizaciones), implementando el backend con NestJS, el frontend con Angular, y PostgreSQL como base de datos, alcanzando un 70% de avance en la arquitectura y funcionalidades clave, preparándolo para una futura implementación exitosa.",
+      "Mantuve y desarrollé nuevas funcionalidades para aplicaciones de automatización en Python, utilizando Selenium y Beautiful Soup, optimizando procesos internos y reduciendo tiempos de ejecución en un 40%.",
+      "Dirigí la migración completa (100%) de SuiteCRM a Zoho CRM, optimizando configuraciones y brindando soporte técnico a equipos comerciales, mejorando la productividad del equipo de ventas en un 25%.",
+      "Gestioné servicios en la nube en AWS, migrando infraestructura a Cloudflare para optimizar costos, logrando una reducción del 90% en gastos de hosting sin comprometer el rendimiento.",
+      "Administré dominios y servicios de hosting, migrando plataformas desde Ionos y GoDaddy a Cloudflare, garantizando un 99.9% de disponibilidad, mejorando el rendimiento de las plataformas web y acelerando el despliegue de aplicaciones en un 75% mediante procesos más eficientes."
     ],
   },
   {
