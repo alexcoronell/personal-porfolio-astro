@@ -9,7 +9,7 @@ export const experiencias: Experience[] = [
     dateEnd: "Actualmente",
     location: "Medellín, CO",
     functions: [
-      "Diseñé y desarrollé tres sitios web corporativos clave (steelbuildingstores.com, catapultsteel.com, directmetalbuildings.com) utilizando Astro, Angular, Svelte, y React, optimizando la presencia digital y la experiencia del usuario, lo que incrementó el tráfico web en un 30% y mejoró la retención de usuarios.",
+      "Diseñé y desarrollé tres sitios web corporativos clave (steelbuildingstores.com, catapultsteel.com, directmetalbuildings.com) utilizando Astro, Angular, Svelte, y React, optimizando la presencia digital y la experiencia del usuario, lo que incrementó el tráfico web en un 50% y mejoró la retención de usuarios.",
       "Creé un robot de compras automatizado con ElectronJS, optimizando la adquisición de anuncios en Craigslist y automatizando el 80% de los procesos internos, reduciendo significativamente el tiempo operativo.",
       "Creé un robot de compras automatizado con ElectronJS, optimizando la adquisición de anuncios en Craigslist y automatizando el 80% de los procesos internos, reduciendo significativamente el tiempo operativo.",
       "Lideré el desarrollo en curso de un CRM interno para gestionar el ciclo de vida del cliente (leads, clientes, cotizaciones), implementando el backend con NestJS, el frontend con Angular, y PostgreSQL como base de datos, alcanzando un 70% de avance en la arquitectura y funcionalidades clave, preparándolo para una futura implementación exitosa.",

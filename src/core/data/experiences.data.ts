@@ -9,7 +9,7 @@ export const experiences: Experience[] = [
     dateEnd: "Current",
     location: "Medellín, CO",
     functions: [
-      "Designed and developed three key corporate websites (steelbuildingstores.com, catapultsteel.com, directmetalbuildings.com) using Astro, Angular, Svelte, and React, enhancing digital presence and user experience, resulting in a 30% increase in web traffic and improved user retention.",
+      "Designed and developed three key corporate websites (steelbuildingstores.com, catapultsteel.com, directmetalbuildings.com) using Astro, Angular, Svelte, and React, enhancing digital presence and user experience, resulting in a 50% increase in web traffic and improved user retention.",
       "Built an automated purchasing bot with ElectronJS, optimizing ad acquisition on Craigslist and automating 80% of internal processes, significantly reducing operational time.",
       "Led the ongoing development of an internal CRM system for managing the customer lifecycle (leads, clients, quotes), implementing the backend with NestJS, the frontend with Angular, and PostgreSQL as the database, achieving 70% progress in architecture and core functionalities, setting the stage for a successful future deployment.",
       "Maintained and developed new features for automation applications in Python, using Selenium and Beautiful Soup, optimizing internal processes and reducing execution times by 40%.",
