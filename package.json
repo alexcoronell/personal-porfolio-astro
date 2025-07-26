@@ -12,26 +12,26 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/cloudflare": "^12.5.3",
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/cloudflare": "^12.6.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/svelte": "^7.1.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@fontsource-variable/montserrat": "^5.2.5",
-    "@fontsource-variable/orbitron": "^5.2.5",
-    "@fontsource-variable/outfit": "^5.2.5",
-    "@fontsource/cutive-mono": "^5.2.5",
+    "@fontsource-variable/montserrat": "^5.2.6",
+    "@fontsource-variable/orbitron": "^5.2.6",
+    "@fontsource-variable/outfit": "^5.2.6",
+    "@fontsource/cutive-mono": "^5.2.6",
     "@fontsource/fira-mono": "^5.2.6",
-    "@fontsource/rajdhani": "^5.2.5",
+    "@fontsource/rajdhani": "^5.2.6",
     "@iconify-json/svg-spinners": "^1.2.2",
-    "astro": "^5.8.0",
-    "sass": "^1.88.0",
-    "svelte": "^5.28.6",
+    "astro": "^5.12.3",
+    "sass": "^1.89.2",
+    "svelte": "^5.36.17",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@iconify-json/bxl": "^1.2.2",
-    "@iconify-json/material-symbols": "^1.2.20",
+    "@iconify-json/material-symbols": "^1.2.30",
     "@iconify/tailwind": "^1.2.0"
   }
 }
