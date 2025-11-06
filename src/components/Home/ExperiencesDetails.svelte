@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentExperienceStore } from "../../stores/store";
+  import { currentExperienceStore } from '../../stores/store';
 </script>
 
 <article class="ExperiencesDetails">
@@ -32,7 +32,7 @@
       @apply flex flex-wrap gap-x-2;
       h4,
       h5 {
-        @apply text-base mb-0;
+        @apply mb-0 text-base;
       }
       h4 {
         @apply text-white;
@@ -49,13 +49,13 @@
     &__functions {
       ul {
         li {
-          @apply grid gap-x-3 mb-0;
+          @apply mb-0 grid gap-x-3;
           grid-template-columns: 25px auto;
           span {
-            @apply text-xl translate-y-1;
+            @apply translate-y-1 text-xl;
           }
           p {
-            @apply text-sm mb-0;
+            @apply mb-0 text-sm;
           }
         }
       }

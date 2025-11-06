@@ -1,22 +1,22 @@
 ---
 /* Components */
-import Section from "../Shared/Section.astro";
-import ContactGooglePixelMockup from "./ContactGooglePixelMockup.astro";
-import ContactSocialMedia from "./ContactSocialMedia.astro";
+import Section from '../Shared/Section.astro';
+import ContactGooglePixelMockup from './ContactGooglePixelMockup.astro';
+import ContactSocialMedia from './ContactSocialMedia.astro';
 
 /* Types */
 import { type MenuItem } from '../../core/models/MenuItem.interface';
 
 /* Utils */
 import { getLangFromUrl } from '../../i18n/utils';
-import { translateMenu } from '../../i18n/translate'
+import { translateMenu } from '../../i18n/translate';
 
-const lang = getLangFromUrl(Astro.url)
-const menuItems: MenuItem[] = translateMenu(lang)
+const lang = getLangFromUrl(Astro.url);
+const menuItems: MenuItem[] = translateMenu(lang);
 
 const index = 6;
-const title = menuItems[index-1].name
-const idTag = menuItems[index-1].url;
+const title = menuItems[index - 1].name;
+const idTag = menuItems[index - 1].url;
 ---
 
 <Section index={index} title={title} idTag={idTag}>
@@ -27,7 +27,7 @@ const idTag = menuItems[index-1].url;
 </Section>
 
 <style>
-    .Contact {
-        @apply md:grid md:grid-cols-2 md:gap-x-5;
-    }
+  .Contact {
+    @apply md:grid md:grid-cols-2 md:gap-x-5;
+  }
 </style>

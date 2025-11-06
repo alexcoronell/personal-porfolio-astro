@@ -1,24 +1,24 @@
-import { get } from "svelte/store";
-import type { InvalidField } from "@interfaces/InvalidField.interface";
-import { currentLanguage } from "../../../stores/store";
+import { get } from 'svelte/store';
+import type { InvalidField } from '@interfaces/InvalidField.interface';
+import { currentLanguage } from '../../../stores/store';
 
 export const messageValidator = (value: string): InvalidField => {
   const message = value.trim();
   const lang = get(currentLanguage);
-  if (message === "") {
+  if (message === '') {
     const message =
-      lang === "es"
-        ? "El mensaje es requerido"
-        : "The message field is required";
+      lang === 'es'
+        ? 'El mensaje es requerido'
+        : 'The message field is required';
     return {
       invalid: true,
       message,
     };
   } else if (message.length < 10) {
     const message =
-      lang === "es"
-        ? "Debe tener al menos 10 caracteres"
-        : "Minimum length: 10 characters";
+      lang === 'es'
+        ? 'Debe tener al menos 10 caracteres'
+        : 'Minimum length: 10 characters';
     return {
       invalid: true,
       message,
@@ -26,7 +26,7 @@ export const messageValidator = (value: string): InvalidField => {
   } else {
     return {
       invalid: false,
-      message: "",
+      message: '',
     };
   }
 };

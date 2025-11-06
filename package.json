@@ -8,7 +8,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ext .js,.ts,.astro,.svelte",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -32,6 +34,16 @@
   "devDependencies": {
     "@iconify-json/bxl": "^1.2.2",
     "@iconify-json/material-symbols": "^1.2.30",
-    "@iconify/tailwind": "^1.2.0"
+    "@iconify/tailwind": "^1.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
+    "eslint": "^9.39.1",
+    "eslint-plugin-astro": "^1.5.0",
+    "eslint-plugin-svelte": "^3.13.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.7.1"
   }
 }

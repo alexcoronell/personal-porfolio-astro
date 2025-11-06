@@ -1,15 +1,15 @@
 ---
-import Basehead from "../components/Shared/Basehead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import ExperiencesDetailsModal from "../components/UI/modals/ExperiencesDetailsModal.svelte";
-import RequestModal from "../components/UI/modals/RequestModal.svelte";
-import "@fontsource/fira-mono";
-import "@fontsource/rajdhani";
+import Basehead from '../components/Shared/Basehead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ExperiencesDetailsModal from '../components/UI/modals/ExperiencesDetailsModal.svelte';
+import RequestModal from '../components/UI/modals/RequestModal.svelte';
+import '@fontsource/fira-mono';
+import '@fontsource/rajdhani';
 // Supports weights 100-900
-import "@fontsource-variable/outfit";
+import '@fontsource-variable/outfit';
 
-import "../styles/main.scss";
+import '../styles/main.scss';
 
 interface Props {
   title: string;
@@ -34,7 +34,7 @@ const { title, location } = Astro.props;
 <style is:global>
   html {
     body {
-      @apply bg-primary-dark min-h-screen w-full;
+      @apply min-h-screen w-full bg-primary-dark;
     }
   }
 
@@ -48,21 +48,20 @@ const { title, location } = Astro.props;
   }
 
   /************************** Buttons **************************/
-  .btn-primary, .btn-error {
-    @apply border px-5 py-3 text-center lg:m-auto transition-all duration-300 hover:shadow-lg;
+  .btn-primary,
+  .btn-error {
+    @apply border px-5 py-3 text-center transition-all duration-300 hover:shadow-lg lg:m-auto;
   }
 
   .btn-primary {
-    @apply border-primary hover:bg-primary hover:text-primary-dark hover:shadow-primary/40 ;
+    @apply border-primary hover:bg-primary hover:text-primary-dark hover:shadow-primary/40;
   }
 
   .btn-error {
-    @apply border-red hover:bg-red text-white;
+    @apply border-red text-white hover:bg-red;
   }
 
   .btn-primary--disabled {
-    @apply cursor-not-allowed opacity-40
-    hover:bg-transparent hover:text-primary hover:shadow-none;
+    @apply cursor-not-allowed opacity-40 hover:bg-transparent hover:text-primary hover:shadow-none;
   }
-
 </style>

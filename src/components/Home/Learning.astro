@@ -1,18 +1,18 @@
 ---
 /* Components */
-import Section from "../Shared/Section.astro";
-import JavaIcon from "../UI/icons/JavaIcon.astro";
-import SpringIcon from "../UI/icons/SpringIcon.astro";
-import NextjsIcon from "../UI/icons/NextjsIcon.astro";
-import PythonIcon from "../UI/icons/PythonIcon.astro";
-import CSharpIcon from "../UI/icons/CSharpIcon.astro";
+import Section from '../Shared/Section.astro';
+import JavaIcon from '../UI/icons/JavaIcon.astro';
+import SpringIcon from '../UI/icons/SpringIcon.astro';
+import NextjsIcon from '../UI/icons/NextjsIcon.astro';
+import PythonIcon from '../UI/icons/PythonIcon.astro';
+import CSharpIcon from '../UI/icons/CSharpIcon.astro';
 
 /* Types */
-import { type MenuItem } from "../../core/models/MenuItem.interface";
+import { type MenuItem } from '../../core/models/MenuItem.interface';
 
 /* Utils */
-import { getLangFromUrl } from "../../i18n/utils";
-import { translateMenu } from "../../i18n/translate";
+import { getLangFromUrl } from '../../i18n/utils';
+import { translateMenu } from '../../i18n/translate';
 
 const lang = getLangFromUrl(Astro.url);
 const menuItems: MenuItem[] = translateMenu(lang);
@@ -44,7 +44,7 @@ const idTag = menuItems[index - 1].url;
 
 <style>
   .learning {
-    @apply w-full relative my-8 h-[100px] overflow-hidden;
+    @apply relative my-8 h-[100px] w-full overflow-hidden;
     mask-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0),
@@ -54,7 +54,7 @@ const idTag = menuItems[index - 1].url;
     );
 
     &__item {
-      @apply w-[200px] h-[100px] flex items-center justify-center gap-x-5 px-8 bg-transparent absolute;
+      @apply absolute flex h-[100px] w-[200px] items-center justify-center gap-x-5 bg-transparent px-8;
       left: calc(200px * 5);
       animation-name: scrollLeft;
       animation-duration: 15s;
@@ -62,7 +62,7 @@ const idTag = menuItems[index - 1].url;
       animation-iteration-count: infinite;
 
       span {
-        @apply m-0  md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem];
+        @apply m-0 md:text-[1rem] lg:text-[1.1rem] xl:text-[1.2rem];
       }
     }
 

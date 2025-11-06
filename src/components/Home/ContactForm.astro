@@ -1,25 +1,25 @@
 ---
 /* Utils */
-import { getLangFromUrl } from "../../i18n/utils";
+import { getLangFromUrl } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-const placeHolder = ">_";
-let titleForm = "Send Me a Message";
-let fullnameLabel = "Fullname";
-let messageLabel = "Message";
-let submitButtonText = "Send";
-let closeButtonText = "Close";
-let errorMessage = "Your message could not be sent";
-let successMessage = "Your message was sent";
+const placeHolder = '>_';
+let titleForm = 'Send Me a Message';
+let fullnameLabel = 'Fullname';
+let messageLabel = 'Message';
+let submitButtonText = 'Send';
+let closeButtonText = 'Close';
+let errorMessage = 'Your message could not be sent';
+let successMessage = 'Your message was sent';
 
-if (lang === "es") {
-  titleForm = "Envíame un mensaje";
-  fullnameLabel = "Nombre completo";
-  messageLabel = "Mensaje";
-  submitButtonText = "Enviar";
-  closeButtonText = "Cerrar";
-  errorMessage = "Tu mensaje no pudo ser enviado";
-  successMessage = "Mensaje enviado";
+if (lang === 'es') {
+  titleForm = 'Envíame un mensaje';
+  fullnameLabel = 'Nombre completo';
+  messageLabel = 'Mensaje';
+  submitButtonText = 'Enviar';
+  closeButtonText = 'Cerrar';
+  errorMessage = 'Tu mensaje no pudo ser enviado';
+  successMessage = 'Mensaje enviado';
 }
 ---
 
@@ -73,7 +73,7 @@ if (lang === "es") {
 
   <div class="ContactForm__modalSuccess hiddenModal" id="modalSuccess">
     <div class="modalBox">
-      <span class="icon-[material-symbols--check-circle-outline] text-green"
+      <span class="text-green icon-[material-symbols--check-circle-outline]"
       ></span>
       <h4 class="text-primary-dark">Success</h4>
       <p>{successMessage}</p>
@@ -86,47 +86,47 @@ if (lang === "es") {
 </div>
 
 <script is:inline>
-  const fullnameInput = document.getElementById("fullname");
-  const emailInput = document.getElementById("email");
-  const messageInput = document.getElementById("message");
-  const btnButton = document.getElementById("btn-button");
-  const form = document.getElementById("form");
-  const loadingModal = document.getElementById("loadingModal");
-  const modalError = document.getElementById("modalError");
-  const modalSuccess = document.getElementById("modalSuccess");
-  const closeError = document.getElementById("closeError");
-  const closeSuccess = document.getElementById("closeSuccess");
+  const fullnameInput = document.getElementById('fullname');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const btnButton = document.getElementById('btn-button');
+  const form = document.getElementById('form');
+  const loadingModal = document.getElementById('loadingModal');
+  const modalError = document.getElementById('modalError');
+  const modalSuccess = document.getElementById('modalSuccess');
+  const closeError = document.getElementById('closeError');
+  const closeSuccess = document.getElementById('closeSuccess');
   const urlGooglesheet =
-    "https://script.google.com/macros/s/AKfycbyHuNAGtludATW120iyvVyWpNBNGnB9oGuIw0Caj3UWd2i1xuCFeqjotM-xbDsvwss/exec";
+    'https://script.google.com/macros/s/AKfycbyHuNAGtludATW120iyvVyWpNBNGnB9oGuIw0Caj3UWd2i1xuCFeqjotM-xbDsvwss/exec';
   const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
-  let fullname = "";
-  let email = "";
-  let message = "";
+  let fullname = '';
+  let email = '';
+  let message = '';
   let fullnameValid = false;
   let emailValid = false;
   let messageValid = false;
-  fullnameInput.addEventListener("keyup", () => {
+  fullnameInput.addEventListener('keyup', () => {
     setTimeout(() => {
       validateFullName();
     }, 500);
   });
-  fullnameInput.addEventListener("change", () => validateFullName());
-  fullnameInput.addEventListener("blur", () => validateFullName());
-  emailInput.addEventListener("change", () => validateEmail());
-  emailInput.addEventListener("blur", () => validateEmail());
-  messageInput.addEventListener("change", () => validateMessage());
-  messageInput.addEventListener("blur", () => validateMessage());
-  form.addEventListener("submit", (e) => onSubmit(e));
-  closeError.addEventListener("click", () => closeModals());
-  closeSuccess.addEventListener("click", () => closeModals());
+  fullnameInput.addEventListener('change', () => validateFullName());
+  fullnameInput.addEventListener('blur', () => validateFullName());
+  emailInput.addEventListener('change', () => validateEmail());
+  emailInput.addEventListener('blur', () => validateEmail());
+  messageInput.addEventListener('change', () => validateMessage());
+  messageInput.addEventListener('blur', () => validateMessage());
+  form.addEventListener('submit', e => onSubmit(e));
+  closeError.addEventListener('click', () => closeModals());
+  closeSuccess.addEventListener('click', () => closeModals());
   fullname.autofocus = false;
   validateFullName = () => {
     fullname = fullnameInput.value;
     if (fullname.length <= 3) {
-      fullnameInput.classList.add("invalid");
+      fullnameInput.classList.add('invalid');
       fullnameValid = false;
     } else {
-      fullnameInput.classList.remove("invalid");
+      fullnameInput.classList.remove('invalid');
       fullnameValid = true;
     }
   };
@@ -134,21 +134,21 @@ if (lang === "es") {
   validateEmail = () => {
     email = emailInput.value;
     if (!emailRegex.test(email)) {
-      emailInput.classList.add("invalid");
+      emailInput.classList.add('invalid');
       emailValid = false;
     } else {
-      emailInput.classList.remove("invalid");
+      emailInput.classList.remove('invalid');
       emailValid = true;
     }
   };
 
   validateMessage = () => {
     message = messageInput.value;
-    if (message === "") {
-      messageInput.classList.add("invalid");
+    if (message === '') {
+      messageInput.classList.add('invalid');
       messageValid = false;
     } else {
-      messageInput.classList.remove("invalid");
+      messageInput.classList.remove('invalid');
       messageValid = true;
     }
   };
@@ -166,44 +166,44 @@ if (lang === "es") {
 
   const sendContactUsMessage = async () => {
     const formData = new FormData();
-    formData.append("fullname", fullname);
-    formData.append("email", email);
-    formData.append("message", message);
-    return await fetch(urlGooglesheet, { method: "POST", body: formData });
+    formData.append('fullname', fullname);
+    formData.append('email', email);
+    formData.append('message', message);
+    return await fetch(urlGooglesheet, { method: 'POST', body: formData });
   };
 
   const closeModals = () => {
-    modalSuccess.classList.add("hiddenModal");
-    modalError.classList.add("hiddenModal");
+    modalSuccess.classList.add('hiddenModal');
+    modalError.classList.add('hiddenModal');
   };
 
   const cleanForm = () => {
-    fullnameInput.value = "";
-    emailInput.value = "";
-    messageInput.value = "";
+    fullnameInput.value = '';
+    emailInput.value = '';
+    messageInput.value = '';
   };
 
-  onSubmit = async (e) => {
+  onSubmit = async e => {
     e.preventDefault();
     if (!validateForm()) return;
-    statusRequest = "loading";
-    btnButton.setAttribute("disabled", true);
-    loadingModal.classList.remove("hiddenModal");
+    statusRequest = 'loading';
+    btnButton.setAttribute('disabled', true);
+    loadingModal.classList.remove('hiddenModal');
     sendContactUsMessage()
       .then(() => {
-        loadingModal.classList.add("hiddenModal");
-        modalSuccess.classList.remove("hiddenModal");
-        statusRequest = "success";
+        loadingModal.classList.add('hiddenModal');
+        modalSuccess.classList.remove('hiddenModal');
+        statusRequest = 'success';
         cleanForm();
       })
-      .catch((e) => {
-        statusRequest = "failed";
-        loadingModal.classList.add("hiddenModal");
-        modalError.classList.remove("hiddenModal");
+      .catch(e => {
+        statusRequest = 'failed';
+        loadingModal.classList.add('hiddenModal');
+        modalError.classList.remove('hiddenModal');
         console.error(e);
       })
       .finally(() => {
-        btnButton.removeAttribute("disabled");
+        btnButton.removeAttribute('disabled');
         setTimeout(() => {
           closeModals();
         }, 5000);
@@ -213,34 +213,34 @@ if (lang === "es") {
 
 <style>
   .ContactForm {
-    @apply bg-black w-full h-full pt-8 px-4;
+    @apply h-full w-full bg-black px-4 pt-8;
     &__title {
       @apply py-4 text-center;
     }
     form {
-      font-family: "Cutive Mono", monospace;
+      font-family: 'Cutive Mono', monospace;
       .form-group {
-        @apply flex flex-col mb-5;
+        @apply mb-5 flex flex-col;
         label {
           @apply text-white;
         }
         input,
         textarea {
-          @apply text-primary rounded-lg px-2 py-2 bg-transparent border border-primary/70 outline-0 transition-all duration-300 focus:border-primary focus:outline-none placeholder:text-primary/70;
+          @apply rounded-lg border border-primary/70 bg-transparent px-2 py-2 text-primary outline-0 transition-all duration-300 placeholder:text-primary/70 focus:border-primary focus:outline-none;
         }
       }
       button {
-        @apply w-full text-center border border-primary/80 rounded-lg py-2 transition-all duration-300 hover:text-black hover:bg-primary disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-black;
+        @apply w-full rounded-lg border border-primary/80 py-2 text-center transition-all duration-300 hover:bg-primary hover:text-black disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-black;
       }
     }
     &__loading,
     &__modalError,
     &__modalSuccess {
-      @apply fixed top-0 left-0 bottom-0 right-0 w-screen h-screen bg-black/90 z-50 flex items-center justify-center p-10 transition-all duration-300;
+      @apply fixed bottom-0 left-0 right-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-black/90 p-10 transition-all duration-300;
     }
     &__loading {
       span {
-        @apply transition-all duration-500 size-[5rem] md:size-[10rem] 2xl:size-[12rem];
+        @apply size-[5rem] transition-all duration-500 md:size-[10rem] 2xl:size-[12rem];
       }
     }
     .hiddenModal {
@@ -252,18 +252,18 @@ if (lang === "es") {
     &__modalError,
     &__modalSuccess {
       .modalBox {
-        @apply w-full max-w-[400px] bg-white/80 p-8 flex flex-col items-center rounded-xl;
+        @apply flex w-full max-w-[400px] flex-col items-center rounded-xl bg-white/80 p-8;
         span {
           @apply mb-2 size-[5rem];
         }
         h4 {
-          @apply text-2xl mb-3;
+          @apply mb-3 text-2xl;
         }
         p {
-          @apply text-black text-center;
+          @apply text-center text-black;
         }
         button {
-          @apply my-4 py-2 px-6 bg-primary-dark/80 text-white transition-all duration-300 hover:bg-primary-dark;
+          @apply my-4 bg-primary-dark/80 px-6 py-2 text-white transition-all duration-300 hover:bg-primary-dark;
         }
       }
     }

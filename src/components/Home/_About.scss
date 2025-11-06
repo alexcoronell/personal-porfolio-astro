@@ -1,9 +1,9 @@
 .AboutMe {
-  @apply lg:grid lg:grid-cols-2 justify-start;
+  @apply justify-start lg:grid lg:grid-cols-2;
   &__pictureBox {
-    @apply px-2 pb-4 flex items-center justify-center lg:items-start lg:pt-0 lg:pr-0 lg:order-2;
+    @apply flex items-center justify-center px-2 pb-4 lg:order-2 lg:items-start lg:pr-0 lg:pt-0;
     &__picture {
-      @apply relative w-full max-w-[350px] lg:max-w-[400px] flex items-center justify-center;
+      @apply relative flex w-full max-w-[350px] items-center justify-center lg:max-w-[400px];
       img.mobile {
         @apply lg:hidden;
       }
@@ -12,7 +12,7 @@
       }
       img.mobile,
       img.desktop {
-        @apply hover:drop-shadow-primary w-full;
+        @apply w-full hover:drop-shadow-primary;
         mask-image: linear-gradient(black 75%, transparent);
       }
     }

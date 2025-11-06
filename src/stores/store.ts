@@ -1,13 +1,13 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-import type { Experience } from "@interfaces/Experience";
-import type { RequestStatus } from "../core/types/RequestStatus.type";
+import type { Experience } from '@interfaces/Experience';
+import type { RequestStatus } from '../core/types/RequestStatus.type';
 
-import { experiences } from "@data/experiences.data";
-import { experiencias } from "@data/experiencias.data";
+import { experiences } from '@data/experiences.data';
+import { experiencias } from '@data/experiencias.data';
 
-const currentLanguage = writable<string>("");
-const requestStatus = writable<RequestStatus>("init");
+const currentLanguage = writable<string>('');
+const requestStatus = writable<RequestStatus>('init');
 
 const isVisibleModal = writable<boolean>(false);
 const showModal = () => isVisibleModal.set(true);
@@ -23,7 +23,7 @@ const currentExperienceStore = writable<Experience | null>(null);
 
 const setExperiencesData = (lang: string) => {
   currentLanguage.set(lang);
-  if (lang === "es") {
+  if (lang === 'es') {
     experiencesDataStore.set(experiencias);
   } else {
     experiencesDataStore.set(experiences);
@@ -32,7 +32,7 @@ const setExperiencesData = (lang: string) => {
 
 const setCurrentExperience = (index: number) => {
   currentExperienceStoreIndex.set(index);
-  experiencesDataStore.subscribe((experiences) => {
+  experiencesDataStore.subscribe(experiences => {
     currentExperienceStore.set(experiences[index]);
   });
 };

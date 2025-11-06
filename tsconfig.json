@@ -9,7 +9,7 @@
       "@models/*": ["./core/models/*"],
       "@types/*": ["./core/types/*"],
       "@utils/*": ["./core/utils/*"],
-      "@stores/*": ["./stores/*"],
+      "@stores/*": ["./stores/*"]
     }
   }
 }

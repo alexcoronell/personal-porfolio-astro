@@ -1,16 +1,16 @@
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@astrojs/tailwind';
 
-import svelte from "@astrojs/svelte";
+import svelte from '@astrojs/svelte';
 
-import sitemap from "@astrojs/sitemap";
+import sitemap from '@astrojs/sitemap';
 
-import cloudflare from "@astrojs/cloudflare";
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://alexcoronell.dev/",
+  site: 'https://alexcoronell.dev/',
   integrations: [
     tailwind({
       nesting: true,
@@ -20,12 +20,12 @@ export default defineConfig({
     sitemap(),
   ],
   i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"],
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
     routing: {
       prefixDefaultLocale: false,
     },
   },
-  output: "server",
+  output: 'server',
   adapter: cloudflare(),
 });

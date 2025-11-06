@@ -1,14 +1,15 @@
 ---
-import Logo from './Header/Logo.astro'
-import MainMenu from './Header/MainMenu.astro'
+import Logo from './Header/Logo.astro';
+import MainMenu from './Header/MainMenu.astro';
 ---
+
 <header class="Header">
-    <Logo />
-    <MainMenu />
+  <Logo />
+  <MainMenu />
 </header>
 
 <style>
-    .Header {
-        @apply bg-primary-dark z-40 px-3 py-2 w-full fixed flex items-center justify-between lg:justify-center 2xl:justify-between;
-    }
+  .Header {
+    @apply fixed z-40 flex w-full items-center justify-between bg-primary-dark px-3 py-2 lg:justify-center 2xl:justify-between;
+  }
 </style>

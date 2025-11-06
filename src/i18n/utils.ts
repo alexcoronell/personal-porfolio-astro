@@ -1,4 +1,4 @@
 export function getLangFromUrl(url: URL) {
-    const [, lang] = url.pathname.split('/');
-    return lang;
+  const [, lang] = url.pathname.split('/');
+  return lang;
 }

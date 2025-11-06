@@ -28,63 +28,62 @@ if (lang === 'es') {
 }
 ---
 
-<div class='MainMenu p-3'>
+<div class="MainMenu p-3">
   <button
-    type='button'
-    id='open-menu-button'
-    class='xl:hidden'
-    role='button'
-    aria-label='Open the menu'
-    ><MenuIcon class='size-10' /><span class='sr-only'>Open the menu</span
+    type="button"
+    id="open-menu-button"
+    class="xl:hidden"
+    role="button"
+    aria-label="Open the menu"
+    ><MenuIcon class="size-10" /><span class="sr-only">Open the menu</span
     ></button
   >
-  <div class='blurFilter filter hiddenFilter' id='filter'></div>
-  <nav id='menu' class='menu hidden-menu'>
-    <div class='areaCloseMenuButton'>
+  <div class="blurFilter hiddenFilter filter" id="filter"></div>
+  <nav id="menu" class="menu hidden-menu">
+    <div class="areaCloseMenuButton">
       <button
-        type='button'
-        id='close-menu-button'
-        role='button'
-        aria-label='Close the menu'
-        ><CloseIcon class='size-10' />
-        <span class='sr-only'>Close the menu</span>
+        type="button"
+        id="close-menu-button"
+        role="button"
+        aria-label="Close the menu"
+        ><CloseIcon class="size-10" />
+        <span class="sr-only">Close the menu</span>
       </button>
     </div>
-    <div class='menuItems'>
+    <div class="menuItems">
       {
         menuItems.map((item, index) => (
           <a
-            class='MainMenuItem'
+            class="MainMenuItem"
             href={'#' + item.url}
             data-scroll-to={item.url}
-            aria-label={`Go to ${item.name} section`}
-          >
-            <span class='index'>0{index + 1}.</span>
-            <span class='name transitionAc'>{item.name}</span>
-            <span class='sr-only'>Go to {item.name} section</span>
+            aria-label={`Go to ${item.name} section`}>
+            <span class="index">0{index + 1}.</span>
+            <span class="name transitionAc">{item.name}</span>
+            <span class="sr-only">Go to {item.name} section</span>
           </a>
         ))
       }
       <a
         href={resumeUrl}
-        target='_blank'
-        class='navResumeButton btn-primary'
+        target="_blank"
+        class="navResumeButton btn-primary"
         download={`${resumeName}.pdf`}
         aria-label={`Download my ${resumeName}`}
         >{resumeName}
-        <span class='sr-only'>Download my {resumeName}</span>
+        <span class="sr-only">Download my {resumeName}</span>
       </a>
-      <div class='languageMenu'>
+      <div class="languageMenu">
         <a
-          href='es'
-          id='spainFlagIcon'
-          arial-label='Cambia el lenguaje a español'
-          ><SpainFlagIcon /><span class='sr-only'
+          href="es"
+          id="spainFlagIcon"
+          arial-label="Cambia el lenguaje a español"
+          ><SpainFlagIcon /><span class="sr-only"
             >Cambia el lenguaje a español</span
           ></a
         >
-        <a href='/' id='usaFlagIcon' arial-label='Change language to English'
-          ><UsaFlagIcon /><span class='sr-only'>Change language to English</span
+        <a href="/" id="usaFlagIcon" arial-label="Change language to English"
+          ><UsaFlagIcon /><span class="sr-only">Change language to English</span
           ></a
         >
       </div>
@@ -109,11 +108,11 @@ if (lang === 'es') {
 
   closeMenuButton?.addEventListener('click', () => toggleMenu(true));
 
-  mainMenuItem.forEach((element) => {
+  mainMenuItem.forEach(element => {
     element?.addEventListener('click', () => toggleMenu(true));
   });
 
-  toggleMenu = (toggle) => {
+  toggleMenu = toggle => {
     hiddenMenu = toggle;
     if (hiddenMenu) {
       menu?.classList.add('hidden-menu');
@@ -136,7 +135,7 @@ if (lang === 'es') {
     }
   };
 
-  smoothScrollLinks.forEach((link) => {
+  smoothScrollLinks.forEach(link => {
     link.addEventListener('click', function (event) {
       const width = window.innerWidth;
       if (width < 1200) return;
@@ -162,19 +161,12 @@ if (lang === 'es') {
   .MainMenu {
     @apply w-full max-xl:text-right xl:w-auto;
     nav.menu {
-      @apply fixed h-screen
-            right-0 top-0 bottom-0 
-            bg-primary-dark/90 
-            flex flex-col w-[80%]
-            max-xl:max-h-screen
-            transition-all duration-500
-            xl:static xl:w-full xl:h-auto;
+      @apply fixed bottom-0 right-0 top-0 flex h-screen w-[80%] flex-col bg-primary-dark/90 transition-all duration-500 max-xl:max-h-screen xl:static xl:h-auto xl:w-full;
       .areaCloseMenuButton {
-        @apply w-full py-4 px-5 text-right grow-0 xl:hidden;
+        @apply w-full grow-0 px-5 py-4 text-right xl:hidden;
       }
       .menuItems {
-        @apply flex flex-col items-center justify-center h-full gap-y-5 grow pb-8
-              xl:flex-row xl:items-center gap-x-5 xl:pb-0 text-sm;
+        @apply flex h-full grow flex-col items-center justify-center gap-x-5 gap-y-5 pb-8 text-sm xl:flex-row xl:items-center xl:pb-0;
       }
     }
   }
@@ -184,14 +176,14 @@ if (lang === 'es') {
   }
 
   .navResumeButton {
-    @apply px-12 py-3 mt-5 xl:mt-0 xl:px-4 xl:py-2;
+    @apply mt-5 px-12 py-3 xl:mt-0 xl:px-4 xl:py-2;
   }
   #filter {
-    @apply fixed h-screen top-0 right-0 bottom-0 border transition delay-300;
+    @apply fixed bottom-0 right-0 top-0 h-screen border transition delay-300;
   }
 
   .hiddenFilter {
-    @apply opacity-0 w-0;
+    @apply w-0 opacity-0;
   }
 
   .showFilter {
@@ -199,7 +191,7 @@ if (lang === 'es') {
   }
 
   .MainMenuItem {
-    @apply flex flex-col items-center justify-center xl:flex-row gap-x-2 mx-3 xl:text-sm 3xl:text-lg;
+    @apply mx-3 flex flex-col items-center justify-center gap-x-2 xl:flex-row xl:text-sm 3xl:text-lg;
 
     .index {
       font-family: 'Fira Mono', sans-serif;
