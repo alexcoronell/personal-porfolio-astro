@@ -10,28 +10,28 @@
 </div>
 
 <script is:inline>
-  const pathNameLogo = window.location.pathname.replace("/", "");
-  const langLogo = pathNameLogo === "es" ? "es" : "en";
-  const textEn = ["Alex Coronell", "Frontend Developer", "Backend Developer"]
-  const textSp = ["Alex Coronell", "Desarrollador Frontend", "Desarrollador Backend"]
-  const finalText = langLogo === 'es' ? textSp : textEn
+  const pathNameLogo = window.location.pathname.replace('/', '');
+  const langLogo = pathNameLogo === 'es' ? 'es' : 'en';
+  const textEn = ['Alex Coronell', 'Frontend Developer', 'Backend Developer'];
+  const textSp = [
+    'Alex Coronell',
+    'Desarrollador Frontend',
+    'Desarrollador Backend',
+  ];
+  const finalText = langLogo === 'es' ? textSp : textEn;
 
   // function([string1, string2],target id,[color1,color2])
-  consoleText(
-    finalText,
-    "text",
-    []
-  );
+  consoleText(finalText, 'text', []);
 
   function consoleText(words, id, colors) {
-    if (colors === undefined) colors = ["#fff"];
+    if (colors === undefined) colors = ['#fff'];
     var visible = true;
-    var con = document.getElementById("console");
+    var con = document.getElementById('console');
     var letterCount = 1;
     var x = 1;
     var waiting = false;
     var target = document.getElementById(id);
-    target.setAttribute("style", "color:" + colors[0]);
+    target.setAttribute('style', 'color:' + colors[0]);
     window.setInterval(function () {
       if (letterCount === 0 && waiting === false) {
         waiting = true;
@@ -42,7 +42,7 @@
           var usedWord = words.shift();
           words.push(usedWord);
           x = 1;
-          target.setAttribute("style", "color:" + colors[0]);
+          target.setAttribute('style', 'color:' + colors[0]);
           letterCount += x;
           waiting = false;
         }, 1000);
@@ -60,10 +60,10 @@
     }, 120);
     window.setInterval(function () {
       if (visible === true) {
-        con.className = "console-underscore hidden";
+        con.className = 'console-underscore hidden';
         visible = false;
       } else {
-        con.className = "console-underscore";
+        con.className = 'console-underscore';
 
         visible = true;
       }
@@ -77,11 +77,10 @@
     &__container {
       @apply relative;
       .console-container {
-        @apply text-sm text-left absolute top-5 bottom-0 left-6 right-0 m-auto w-[200px] h-[40px] block whitespace-nowrap
-      md:top-3 md:text-lg;
+        @apply absolute bottom-0 left-6 right-0 top-5 m-auto block h-[40px] w-[200px] whitespace-nowrap text-left text-sm md:top-3 md:text-lg;
       }
       .console-underscore {
-        @apply relative inline-block left-[10px];
+        @apply relative left-[10px] inline-block;
       }
     }
   }

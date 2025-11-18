@@ -1,10 +1,10 @@
 ---
 /* Utils */
-import { getLangFromUrl } from "../../i18n/utils";
-import { translateStatusWork } from "../../i18n/translate";
+import { getLangFromUrl } from '../../i18n/utils';
+import { translateStatusWork } from '../../i18n/translate';
 
 /* Data */
-import { type Work, type Status } from "../../core/types/PersonalData";
+import { type Work, type Status } from '../../core/types/PersonalData';
 
 /* Props */
 interface Props {
@@ -12,22 +12,22 @@ interface Props {
   index: number;
 }
 
-
 const { item, index } = Astro.props;
-const translateClass = index % 2 === 0 ? "lg:translate-x-[-50%]" : "lg:translate-x-[50%]";
-let technologiesTitle = "Technologies";
+const translateClass =
+  index % 2 === 0 ? 'lg:translate-x-[-50%]' : 'lg:translate-x-[50%]';
+let technologiesTitle = 'Technologies';
 let status: Status | string = item.status;
-let visitTextButton = "Visit";
-let visitTheCodeTextButton = "Visit the code";
+let visitTextButton = 'Visit';
+let visitTheCodeTextButton = 'Visit the code';
 const lang = getLangFromUrl(Astro.url);
-if (lang === "es") {
-  technologiesTitle = "Tecnologías";
+if (lang === 'es') {
+  technologiesTitle = 'Tecnologías';
   status = translateStatusWork(item.status, lang);
-  visitTextButton = "Visita";
-  visitTheCodeTextButton = "Ve al código";
+  visitTextButton = 'Visita';
+  visitTheCodeTextButton = 'Ve al código';
 }
 
-const pathImages = "/assets/images/briefcase/";
+const pathImages = '/assets/images/briefcase/';
 const hrefActive = item.url.length > 0;
 ---
 
@@ -35,7 +35,7 @@ const hrefActive = item.url.length > 0;
   <img
     class="rounded-t-lg"
     src={pathImages + item.image}
-    alt={item.title + " image"}
+    alt={item.title + ' image'}
   />
   <div class="WorkItem__detail">
     <h5 class="WorkItem__title">
@@ -45,9 +45,9 @@ const hrefActive = item.url.length > 0;
     <p class="WorkItem__technologiesTitle">{technologiesTitle}:</p>
     <div class="WorkItem__technologiesItems">
       {
-        item.technologies.map((tech) => {
+        item.technologies.map(tech => {
           return (
-            <span class="mr-2 mb-3 border border-primary rounded-full grow-0 text-primary px-2 text-[0.8rem]">
+            <span class="mb-3 mr-2 grow-0 rounded-full border border-primary px-2 text-[0.8rem] text-primary">
               {tech}
             </span>
           );
@@ -55,14 +55,13 @@ const hrefActive = item.url.length > 0;
       }
     </div>
   </div>
-  <div class="w-full flex items-center justify-center gap-x-3">
+  <div class="flex w-full items-center justify-center gap-x-3">
     {
       hrefActive && (
         <a
           href={item.url}
           target="_blank"
-          class="btn-primary inline-flex items-center justify-center text-center w-[130px]"
-        >
+          class="btn-primary inline-flex w-[130px] items-center justify-center text-center">
           {visitTextButton}
           <span class="sr-only">Visit the {item.title} website</span>
         </a>
@@ -72,12 +71,11 @@ const hrefActive = item.url.length > 0;
     {
       !hrefActive && (
         <button
-          class="btn-primary btn-primary--disabled inline-flex items-center justify-center text-center w-[130px]"
+          class="btn-primary btn-primary--disabled inline-flex w-[130px] items-center justify-center text-center"
           role="button"
           aria-disabled="true"
           disabled
-          title={`The ${item.title} website is not available at this time`}
-        >
+          title={`The ${item.title} website is not available at this time`}>
           {visitTextButton}
           <span class="sr-only">
             The {item.title} website is not available at this time
@@ -91,8 +89,7 @@ const hrefActive = item.url.length > 0;
         <a
           href={item.codeUrl}
           target="_blank"
-          class="btn-primary inline-flex items-center justify-center text-center px-4 w-[130px]"
-        >
+          class="btn-primary inline-flex w-[130px] items-center justify-center px-4 text-center">
           {visitTheCodeTextButton}
           <span class="sr-only">Visit the {item.title} code</span>
         </a>
@@ -101,12 +98,11 @@ const hrefActive = item.url.length > 0;
     {
       !item.publicCode && (
         <button
-          class="btn-primary btn-primary--disabled inline-flex items-center justify-center text-center w-[130px]"
+          class="btn-primary btn-primary--disabled inline-flex w-[130px] items-center justify-center text-center"
           role="button"
           aria-disabled="true"
           disabled
-          title={`The ${item.title} code is private`}
-        >
+          title={`The ${item.title} code is private`}>
           {visitTheCodeTextButton}
           <span class="sr-only">The {item.title} code is private</span>
         </button>
@@ -117,14 +113,14 @@ const hrefActive = item.url.length > 0;
 
 <style>
   .WorkItem {
-    @apply max-w-sm border border-primary/30 rounded-lg shadow p-0 pb-5 mb-5 md:m-0 mx-auto flex flex-col justify-between overflow-hidden opacity-0 translate-y-[25%];
+    @apply mx-auto mb-5 flex max-w-sm translate-y-[25%] flex-col justify-between overflow-hidden rounded-lg border border-primary/30 p-0 pb-5 opacity-0 shadow md:m-0;
     animation: animationFadeInTranslate linear forwards;
     animation-timeline: view();
     animation-range-start: 10%;
     animation-range-end: 30%;
 
     &__detail {
-      @apply p-5 grow flex flex-col;
+      @apply flex grow flex-col p-5;
     }
 
     &__title {
@@ -137,7 +133,7 @@ const hrefActive = item.url.length > 0;
     }
 
     &__technologiesItems {
-      @apply text-wrap w-full overflow-hidden flex flex-wrap;
+      @apply flex w-full flex-wrap overflow-hidden text-wrap;
     }
   }
 </style>

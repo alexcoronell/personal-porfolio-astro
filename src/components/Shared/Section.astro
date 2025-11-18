@@ -1,42 +1,44 @@
 ---
 interface Props {
-    index: number,
-    title: string,
-    idTag: string,
+  index: number;
+  title: string;
+  idTag: string;
 }
 const { index, title, idTag } = Astro.props;
 ---
+
 <div id={idTag} class="h-[100px] w-full"></div>
 <section class="Section">
-    <div class="Section__titleArea">
-        <h4>0{index}.</h4>
-        <h3>{title}</h3>
-        <div class="Section__titleArea__line"></div>  
-    </div>
-    <div class="Section__content">
-        <slot />
-    <div/>
-</section>
+  <div class="Section__titleArea">
+    <h4>0{index}.</h4>
+    <h3>{title}</h3>
+    <div class="Section__titleArea__line"></div>
+  </div>
+  <div class="Section__content">
+    <slot />
+    <div></div>
+  </div>
 
-<style>
+  <style>
     .Section {
-        @apply px-6 md:px-0 mx-auto md:w-[80%] md:max-w-[700px] xl:max-w-[800px];
-        &__titleArea {
-            @apply flex gap-x-3 items-end pt-3 pb-2 scale-0 opacity-0;
-            animation: animationFadeInScale 0.5s ease-in-out forwards;
-            animation-timeline: view();
-            animation-range-start: 20%;
-            animation-range-end: 40%;
-            h3 {
-                @apply text-white/80;
-            }
+      @apply mx-auto px-6 md:w-[80%] md:max-w-[700px] md:px-0 xl:max-w-[800px];
+      &__titleArea {
+        @apply flex scale-0 items-end gap-x-3 pb-2 pt-3 opacity-0;
+        animation: animationFadeInScale 0.5s ease-in-out forwards;
+        animation-timeline: view();
+        animation-range-start: 20%;
+        animation-range-end: 40%;
+        h3 {
+          @apply text-white/80;
+        }
 
-            &__line {
-                @apply border-t border-white/20 pb-4 grow;
-            }
+        &__line {
+          @apply grow border-t border-white/20 pb-4;
         }
-        &__content {
-            @apply pt-10;
-        }
+      }
+      &__content {
+        @apply pt-10;
+      }
     }
-</style>
+  </style>
+</section>

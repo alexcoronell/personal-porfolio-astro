@@ -39,4 +39,4 @@ export interface Experience {
   functions?: string[];
 }
 
-export type Status = "active" | "inactive" | "Developing";
+export type Status = 'active' | 'inactive' | 'Developing';

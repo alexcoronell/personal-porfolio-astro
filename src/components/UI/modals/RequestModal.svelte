@@ -1,48 +1,46 @@
 <script lang="ts">
-  import ModalLayout from "../../../layouts/ModalLayout.svelte";
-  import Spinner from "../icons/Spinner.svelte";
-  import CheckIcon from "../icons/CheckIcon.svelte";
-  import WarningIcon from "../icons/WaningIcon.svelte";
+  import ModalLayout from '../../../layouts/ModalLayout.svelte';
+  import Spinner from '../icons/Spinner.svelte';
+  import CheckIcon from '../icons/CheckIcon.svelte';
+  import WarningIcon from '../icons/WaningIcon.svelte';
   import {
     isVisibleModal,
     hideModal,
     requestStatus,
     currentLanguage,
-  } from "../../../stores/store";
+  } from '../../../stores/store';
   let successMessage: string;
   let errorMessage: string;
-  $: currentLanguage.subscribe((value) => {
+  $: currentLanguage.subscribe(value => {
     successMessage =
-      $currentLanguage === "es"
-        ? "Tu mensaje fue enviado"
-        : "Your message was sent";
+      $currentLanguage === 'es'
+        ? 'Tu mensaje fue enviado'
+        : 'Your message was sent';
     errorMessage =
-      $currentLanguage === "es" ? "Algo salió mal" : "Something went wrong";
+      $currentLanguage === 'es' ? 'Algo salió mal' : 'Something went wrong';
   });
 </script>
 
 {#if $isVisibleModal}
   <ModalLayout>
     <div class="RequestModal">
-      {#if $requestStatus === "loading"}
+      {#if $requestStatus === 'loading'}
         <Spinner classes="w-[100px] h-[100px]" />
       {/if}
       <div class="RequestModal__content">
-        {#if $requestStatus === "success"}
+        {#if $requestStatus === 'success'}
           <CheckIcon classes="w-[80px] h-[80px]" />
           <h4>{successMessage}</h4>
           <button class="btn-primary" on:click={hideModal}
-            >{$currentLanguage === "es" ? "Cerrar" : "Close"}</button
-          >
+            >{$currentLanguage === 'es' ? 'Cerrar' : 'Close'}</button>
         {/if}
-        {#if $requestStatus === "error"}
+        {#if $requestStatus === 'error'}
           <WarningIcon classes="w-[80px] h-[80px] text-red" />
           <h4 class="text-red">{errorMessage}</h4>
           <button class="btn-error" on:click={hideModal}
-            >{$currentLanguage === "es"
-              ? "Intenta de nuevo"
-              : "Try Again"}</button
-          >
+            >{$currentLanguage === 'es'
+              ? 'Intenta de nuevo'
+              : 'Try Again'}</button>
         {/if}
       </div>
     </div>
@@ -51,14 +49,14 @@
 
 <style>
   .RequestModal {
-    @apply flex flex-col items-center justify-center w-[300px] h-[300px] md:w-[500px];
+    @apply flex h-[300px] w-[300px] flex-col items-center justify-center md:w-[500px];
 
     &__content {
       @apply flex flex-col items-center justify-center gap-y-5;
     }
 
     h4 {
-      @apply text-xl md:text-2xl text-center;
+      @apply text-center text-xl md:text-2xl;
     }
   }
 </style>

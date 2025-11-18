@@ -1,11 +1,11 @@
 <script>
-  import ModalLayout from "../../../layouts/ModalLayout.svelte";
-  import CloseIcon from "../icons/CloseIcon.svelte";
-  import ExperiencesDetails from "../../Home/ExperiencesDetails.svelte";
+  import ModalLayout from '../../../layouts/ModalLayout.svelte';
+  import CloseIcon from '../icons/CloseIcon.svelte';
+  import ExperiencesDetails from '../../Home/ExperiencesDetails.svelte';
   import {
     isVisibleModalExperience,
     hideModalExperience,
-  } from "../../../stores/store";
+  } from '../../../stores/store';
 </script>
 
 {#if $isVisibleModalExperience}
@@ -23,10 +23,10 @@
 
 <style lang="scss">
   .ExperienceDetailsModal {
-    @apply relative p-6 max-h-[75vh] overflow-y-auto max-w-[600px];
+    @apply relative max-h-[75vh] max-w-[600px] overflow-y-auto p-6;
 
     &__closeButton {
-      @apply w-full flex items-center justify-end pb-3;
+      @apply flex w-full items-center justify-end pb-3;
     }
   }
 </style>

@@ -1,15 +1,15 @@
 // Supports weights 400-900
-@use "@fontsource-variable/orbitron";
+@use '@fontsource-variable/orbitron';
 
 // Supports weights 100-900
-@use "@fontsource-variable/montserrat";
+@use '@fontsource-variable/montserrat';
 
 // To use in form
-@use "@fontsource/cutive-mono";
+@use '@fontsource/cutive-mono';
 
 html {
-  @apply text-primary text-base;
-  font-family: "Fira Mono", sans-serif;
+  @apply text-base text-primary;
+  font-family: 'Fira Mono', sans-serif;
 
   h1,
   h2,
@@ -21,13 +21,13 @@ html {
   }
 
   h1 {
-    @apply font-bold text-5xl md:text-6xl lg:text-8xl;
+    @apply text-5xl font-bold md:text-6xl lg:text-8xl;
   }
   h2 {
     @apply text-3xl;
   }
   h3 {
-    font-family: "Orbitron Variable", sans-serif;
+    font-family: 'Orbitron Variable', sans-serif;
     @apply text-2xl;
   }
   h4 {
@@ -41,8 +41,8 @@ html {
     @apply text-xs;
   }
   p {
-    @apply text-white/90 text-base mb-2 text-pretty font-light;
-    font-family: "Montserrat Variable", sans-serif;
+    @apply mb-2 text-pretty text-base font-light text-white/90;
+    font-family: 'Montserrat Variable', sans-serif;
   }
 
   button,
@@ -52,6 +52,6 @@ html {
 
   button,
   a {
-    font-family: "Rajdhani", sans-serif;
+    font-family: 'Rajdhani', sans-serif;
   }
 }

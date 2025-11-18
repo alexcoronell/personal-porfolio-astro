@@ -1,20 +1,19 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Presentation from "../../components/Home/Presentation.astro";
-import About from "../../components/Home/About.astro";
-import Skills from "../../components/Home/Skills.astro";
-import Learning from "../../components/Home/Learning.astro";
-import Briefcase from "../../components/Home/Works.astro";
-import ExperiencesSection from "../../components/Home/ExperiencesSection.astro";
-import Contact from "../../components/Home/Contact.astro";
-import { personalData } from "../../core/data/personalData";
+import Layout from '../../layouts/Layout.astro';
+import Presentation from '../../components/Home/Presentation.astro';
+import About from '../../components/Home/About.astro';
+import Skills from '../../components/Home/Skills.astro';
+import Learning from '../../components/Home/Learning.astro';
+import Briefcase from '../../components/Home/Works.astro';
+import ExperiencesSection from '../../components/Home/ExperiencesSection.astro';
+import Contact from '../../components/Home/Contact.astro';
+import { personalData } from '../../core/data/personalData';
 const location = Astro.url.href;
 ---
 
 <Layout
-  title={personalData.shortname + " | Frontend Developer"}
-  location={location}
->
+  title={personalData.shortname + ' | Frontend Developer'}
+  location={location}>
   <main>
     <Presentation />
     <About />

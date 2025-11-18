@@ -1,5 +1,4 @@
 export interface InvalidField {
-    invalid: boolean;
-    message: string;
-  }
-  
+  invalid: boolean;
+  message: string;
+}

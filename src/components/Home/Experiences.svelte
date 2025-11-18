@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExperiencesDetails from "./ExperiencesDetails.svelte";
+  import ExperiencesDetails from './ExperiencesDetails.svelte';
   import {
     setExperiencesData,
     experiencesDataStore,
@@ -7,10 +7,10 @@
     currentExperienceStoreIndex,
     showModalExperience,
     isVisibleModalExperience,
-  } from "../../stores/store";
-  import { onMount } from "svelte";
+  } from '../../stores/store';
+  import { onMount } from 'svelte';
 
-  export let lang: string = "";
+  export let lang: string = '';
 
   onMount(() => {
     setTimeout(() => {
@@ -36,8 +36,7 @@
         $currentExperienceStoreIndex
           ? 'businessActive'
           : ''}"
-        on:click={() => updateCurrentExperience(index)}
-      >
+        on:click={() => updateCurrentExperience(index)}>
         {experience.business}
       </button>
     {/each}
@@ -49,26 +48,24 @@
 
 <style lang="scss">
   .Experiences {
-    @apply md:flex md:gap-x-8 opacity-0 translate-y-[25%];
+    @apply translate-y-[25%] opacity-0 md:flex md:gap-x-8;
     animation: animationFadeInTranslate linear forwards;
     animation-timeline: view();
     animation-range-start: 10%;
     animation-range-end: 30%;
     &__business {
-      @apply grid grid-cols-2 max-md:gap-3 py-2 mb-5 md:flex md:flex-col md:items-start grow-0;
+      @apply mb-5 grid grow-0 grid-cols-2 py-2 max-md:gap-3 md:flex md:flex-col md:items-start;
     }
     &__button {
-      @apply md:py-3 md:px-2 md:text-white md:border md:border-primary/30 
-    md:border-l md:pl-[1.5rem] md:whitespace-nowrap md:text-left md:w-full md:min-w-[300px];
+      @apply md:w-full md:min-w-[300px] md:whitespace-nowrap md:border md:border-l md:border-primary/30 md:px-2 md:py-3 md:pl-[1.5rem] md:text-left md:text-white;
     }
 
     &__details {
-      @apply py-2 grow max-md:hidden;
+      @apply grow py-2 max-md:hidden;
     }
 
     .businessActive {
-      @apply md:border md:border-primary max-md:shadow-sm 
-  md:text-primary md:border-l-2 md:pl-[2.5rem] hover:text-primary-dark;
+      @apply hover:text-primary-dark max-md:shadow-sm md:border md:border-l-2 md:border-primary md:pl-[2.5rem] md:text-primary;
     }
   }
 </style>

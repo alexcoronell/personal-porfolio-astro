@@ -1,29 +1,41 @@
 ---
-import ContactForm from './ContactForm.svelte'
+import ContactForm from './ContactForm.svelte';
 /* Utils */
 import { getLangFromUrl } from '../../i18n/utils';
 
-const lang = getLangFromUrl(Astro.url)
+const lang = getLangFromUrl(Astro.url);
 ---
+
 <div class="ContactLinkedinProfile relative">
-    <div class="relative mx-auto border-primary bg-dark border-[14px] rounded-xl h-[600px] w-[300px] shadow-md shadow-primary">
-        <div class="w-[148px] h-[18px] bg-primary top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-        <div class="h-[32px] w-[3px] bg-primary absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-        <div class="h-[46px] w-[3px] bg-primary absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-        <div class="h-[46px] w-[3px] bg-primary absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-        <div class="h-[64px] w-[3px] bg-primary absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-        <div class="overflow-hidden w-[272px] h-[572px] bg-primary">
-            <ContactForm client:load lang={lang} />
-        </div>
+  <div
+    class="bg-dark relative mx-auto h-[600px] w-[300px] rounded-xl border-[14px] border-primary shadow-md shadow-primary">
+    <div
+      class="absolute left-1/2 top-0 h-[18px] w-[148px] -translate-x-1/2 rounded-b-[1rem] bg-primary">
     </div>
+    <div
+      class="absolute -start-[17px] top-[72px] h-[32px] w-[3px] rounded-s-lg bg-primary">
+    </div>
+    <div
+      class="absolute -start-[17px] top-[124px] h-[46px] w-[3px] rounded-s-lg bg-primary">
+    </div>
+    <div
+      class="absolute -start-[17px] top-[178px] h-[46px] w-[3px] rounded-s-lg bg-primary">
+    </div>
+    <div
+      class="absolute -end-[17px] top-[142px] h-[64px] w-[3px] rounded-e-lg bg-primary">
+    </div>
+    <div class="h-[572px] w-[272px] overflow-hidden bg-primary">
+      <ContactForm client:load lang={lang} />
+    </div>
+  </div>
 </div>
 
 <style>
-    .ContactLinkedinProfile {
-        @apply opacity-0 translate-y-[25%];
-        animation: animationFadeInTranslate linear forwards;
-        animation-timeline: view();
-        animation-range-start: 10%;
-        animation-range-end: 35%;
-    }
+  .ContactLinkedinProfile {
+    @apply translate-y-[25%] opacity-0;
+    animation: animationFadeInTranslate linear forwards;
+    animation-timeline: view();
+    animation-range-start: 10%;
+    animation-range-end: 35%;
+  }
 </style>

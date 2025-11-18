@@ -1,50 +1,55 @@
 <script lang="ts">
-  import { nameValidator } from "../../core/utils/validators/name.validator";
-  import { emailValidator } from "../../core/utils/validators/email.validator";
-  import { messageValidator } from "../../core/utils/validators/message.validator";
+  import { nameValidator } from '../../core/utils/validators/name.validator';
+  import { emailValidator } from '../../core/utils/validators/email.validator';
+  import { messageValidator } from '../../core/utils/validators/message.validator';
 
-  import { sendContactUsMessage } from "../../core/utils/sendContactMessage";
+  import { sendContactUsMessage } from '../../core/utils/sendContactMessage';
 
   /*  Types and Interfaces */
-  import type { ContactForm } from "../../core/interfaces/ContactForm.interface";
-  import type { InvalidField } from "../../core/interfaces/InvalidField.interface";
+  import type { ContactForm } from '../../core/interfaces/ContactForm.interface';
+  import type { InvalidField } from '../../core/interfaces/InvalidField.interface';
 
   /* Store */
-  import { showModal, hideModal, requestStatus, currentLanguage } from "../../stores/store";
-  import { onMount } from "svelte";
+  import {
+    showModal,
+    hideModal,
+    requestStatus,
+    currentLanguage,
+  } from '../../stores/store';
+  import { onMount } from 'svelte';
 
   /* Props */
-  export let lang: string = "";
+  export let lang: string = '';
 
   /* Variables */
   const labelNames = {
-    fullname: lang === "es" ? "Nombre completo" : "Fullname",
-    email: lang === "es" ? "Email" : "Email",
-    message: lang === "es" ? "Mensaje" : "Message",
+    fullname: lang === 'es' ? 'Nombre completo' : 'Fullname',
+    email: lang === 'es' ? 'Email' : 'Email',
+    message: lang === 'es' ? 'Mensaje' : 'Message',
   };
 
-  const titleForm = lang === "es" ? "Envíame un mensaje" : "Send Me a Message";
-  const btnLabel = lang === "es" ? "Send" : "Enviar";
-  const placeHolder = ">_";
+  const titleForm = lang === 'es' ? 'Envíame un mensaje' : 'Send Me a Message';
+  const btnLabel = lang === 'es' ? 'Send' : 'Enviar';
+  const placeHolder = '>_';
 
   const contactForm: ContactForm = {
-    fullname: "",
-    email: "",
-    message: "",
-    language: lang === "es" ? "es" : "en",
+    fullname: '',
+    email: '',
+    message: '',
+    language: lang === 'es' ? 'es' : 'en',
   };
 
   let fullnameInvalid: InvalidField = {
     invalid: false,
-    message: "",
+    message: '',
   };
   let emailInvalid: InvalidField = {
     invalid: false,
-    message: "",
+    message: '',
   };
   let messageInvalid: InvalidField = {
     invalid: false,
-    message: "",
+    message: '',
   };
 
   /* Functions */
@@ -76,22 +81,22 @@
   };
 
   const cleanForm = () => {
-    contactForm.fullname = "";
-    contactForm.email = "";
-    contactForm.message = "";
+    contactForm.fullname = '';
+    contactForm.email = '';
+    contactForm.message = '';
   };
 
   const onSubmit = () => {
     if (!validateForm()) return;
-    requestStatus.set("loading");
+    requestStatus.set('loading');
     showModal();
     sendContactUsMessage(contactForm)
       .then(() => {
-        requestStatus.set("success");
+        requestStatus.set('success');
         cleanForm();
       })
       .catch(() => {
-        requestStatus.set("error");
+        requestStatus.set('error');
       })
       .finally(() => {
         setTimeout(() => {
@@ -102,7 +107,7 @@
 
   onMount(() => {
     currentLanguage.set(lang);
-  })
+  });
 </script>
 
 <div class="ContactForm">
@@ -112,7 +117,7 @@
     <div class="form-group">
       <label for="fullname">{labelNames.fullname}</label>
       <input
-        class={fullnameInvalid.invalid ? "invalid" : ""}
+        class={fullnameInvalid.invalid ? 'invalid' : ''}
         type="text"
         name="fullname"
         id="fullname"
@@ -121,8 +126,7 @@
         on:keyup={validateName}
         on:blur={validateName}
         on:change={validateName}
-        on:input={validateName}
-      />
+        on:input={validateName} />
       <div class="invalidMessage">{fullnameInvalid.message}</div>
     </div>
 
@@ -130,7 +134,7 @@
     <div class="form-group">
       <label for="email">{labelNames.email}</label>
       <input
-        class={emailInvalid.invalid ? "invalid" : ""}
+        class={emailInvalid.invalid ? 'invalid' : ''}
         type="email"
         name="email"
         id="email"
@@ -139,8 +143,7 @@
         on:keyup={validateEmail}
         on:blur={validateEmail}
         on:change={validateEmail}
-        on:input={validateEmail}
-      />
+        on:input={validateEmail} />
       <div class="invalidMessage">{emailInvalid.message}</div>
     </div>
 
@@ -148,7 +151,7 @@
     <div class="form-group">
       <label for="message">{labelNames.message}</label>
       <textarea
-        class={messageInvalid.invalid ? "invalid" : ""}
+        class={messageInvalid.invalid ? 'invalid' : ''}
         name="message"
         id="message"
         rows={6}
@@ -157,8 +160,7 @@
         on:keyup={validateMessage}
         on:blur={validateMessage}
         on:change={validateMessage}
-        on:input={validateMessage}
-      ></textarea>
+        on:input={validateMessage}></textarea>
       <div class="invalidMessage">{messageInvalid.message}</div>
     </div>
 
@@ -167,38 +169,37 @@
       <button
         type="submit"
         id="btn-button"
-        disabled={$requestStatus === "loading"}
+        disabled={$requestStatus === 'loading'}
         aria-label="Send the message"
-        >{btnLabel}<span class="sr-only">Send the message</span></button
-      >
+        >{btnLabel}<span class="sr-only">Send the message</span></button>
     </div>
   </form>
 </div>
 
 <style lang="scss">
   .ContactForm {
-    @apply bg-black w-full h-full pt-8 px-4;
+    @apply h-full w-full bg-black px-4 pt-8;
     &__title {
       @apply py-4 text-center;
     }
     form {
-      font-family: "Cutive Mono", monospace;
+      font-family: 'Cutive Mono', monospace;
       .form-group {
-        @apply flex flex-col mb-5 relative;
+        @apply relative mb-5 flex flex-col;
         label {
           @apply text-white;
         }
         input,
         textarea {
-          @apply text-primary rounded-lg px-2 py-2 bg-transparent border border-primary/70 outline-0 transition-all duration-300 focus:border-primary focus:outline-none placeholder:text-primary/70;
+          @apply rounded-lg border border-primary/70 bg-transparent px-2 py-2 text-primary outline-0 transition-all duration-300 placeholder:text-primary/70 focus:border-primary focus:outline-none;
         }
       }
       button {
-        @apply w-full mt-3 text-center border border-primary/80 rounded-lg py-2 transition-all duration-300 hover:text-black hover:bg-primary disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-black;
+        @apply mt-3 w-full rounded-lg border border-primary/80 py-2 text-center transition-all duration-300 hover:bg-primary hover:text-black disabled:cursor-not-allowed disabled:bg-primary/50 disabled:text-black;
       }
     }
     .invalidMessage {
-      @apply absolute left-0 bottom-[-1.1rem] text-xs;
+      @apply absolute bottom-[-1.1rem] left-0 text-xs;
       color: #ef4444;
     }
     .invalid {
