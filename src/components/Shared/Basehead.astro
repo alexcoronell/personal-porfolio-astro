@@ -13,98 +13,14 @@ const enDescription =
 const esDescription =
   'Desarrollador Fullstack & Frontend experto en la creación de aplicaciones web robustas e interfaces de usuario dinámicas. Explora mi portafolio y proyectos.';
 
-export const SPANISH_SEO_KEYWORDS: string[] = [
-  'Desarrollador Frontend',
-  'Frontend Developer',
-  'Desarrollador Fullstack',
-  'Fullstack Developer',
-  'Ingeniero de Software',
-  'Software Engineer',
-  'Desarrollo Web',
-  'Web Development',
-  'Diseño de Interfaz de Usuario',
-  'UI Design',
-  'Experiencia de Usuario',
-  'UX Experience',
-  'Desarrollo de Aplicaciones Web',
-  'Web Application Development',
-  'Portafolio de Desarrollador',
-  'Developer Portfolio',
-  'Alex Coronell',
-  'Angular',
-  'AstroJS',
-  'React.js',
-  'React',
-  'Next.js',
-  'TypeScript',
-  'JavaScript',
-  'HTML',
-  'CSS',
-  'Node.js',
-  'NestJS',
-  'RESTful APIs',
-  'Git',
-  'GitHub',
-  'Tailwind',
-  'Bootstrap',
-  'Interfaces de Usuario Dinámicas',
-  'Dynamic User Interfaces',
-  'Aplicaciones Robustas',
-  'Robust Applications',
-  'Diseño Responsivo',
-  'Responsive Design',
-  'Performance Web',
-  'Web Performance',
-  'Código Limpio',
-  'Clean Code',
-  'Proyectos Web',
-  'Web Projects',
-];
-
-export const ENGLISH_SEO_KEYWORDS: string[] = [
-  'Frontend Developer',
-  'Fullstack Developer',
-  'Software Engineer',
-  'Web Development',
-  'UI Design',
-  'UX Experience',
-  'Web Application Development',
-  'Developer Portfolio',
-  'Alex Coronell',
-  'Angular',
-  'AstroJS',
-  'React.js',
-  'React',
-  'Next.js',
-  'TypeScript',
-  'JavaScript',
-  'HTML',
-  'CSS',
-  'Node.js',
-  'NestJS',
-  'RESTful APIs',
-  'Git',
-  'GitHub',
-  'Tailwind',
-  'Bootstrap',
-  'Dynamic User Interfaces',
-  'Robust Web Applications',
-  'Responsive Design',
-  'Web Performance',
-  'Clean Code',
-  'Web Projects',
-];
-
 const metadescription = lang === 'es' ? esDescription : enDescription;
-
-const keywords =
-  lang === 'es'
-    ? SPANISH_SEO_KEYWORDS.join(', ')
-    : ENGLISH_SEO_KEYWORDS.join(', ');
+const locale = lang === 'es' ? 'es_CO' : 'en_US';
 
 const { title, location } = Astro.props;
 
 import { personalData } from '../../core/data/personalData';
+const path = Astro.url.pathname;
+const canonicalUrl = `${personalData.site}${path}`;
 ---
 
 <head>
@@ -126,26 +42,25 @@ import { personalData } from '../../core/data/personalData';
   <!-- Bing HTML Meta Tag -->
   <meta name="msvalidate.01" content="9F9D2A61BF1C263D384A41045D5126A4" />
 
-  <meta name="locale" content="en_US" />
+  <meta name="locale" content={locale} />
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="site_name" content={personalData.site} />
   <meta name="author" content={personalData.shortname} />
   <meta name="url" content={location} />
   <meta name="description" content={metadescription} />
-  <meta name="keywords" content={keywords} />
-  <link rel="canonical" href={location} />
+  <link rel="canonical" href={canonicalUrl} />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/ico" href="/favicon.ico" />
   <meta name="generator" content={Astro.generator} />
   <link rel="sitemap" href="/sitemap-index.xml" />
-  <meta name="”robots”" content="”index," follow” />
+  <meta name="robots" content="index, follow" />
   <!-- Open Graph -->
-  <meta property="og:locale" content="en_US" />
-  <meta property="”og:type”" content="”website”" />
+  <meta property="og:locale" content={locale} />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content={personalData.site} />
-  <meta property="”og:title”" content={title} />
+  <meta property="og:title" content={title} />
   <meta property="og:url" content={location} />
-  <meta property="”og:description”" content={metadescription} />
+  <meta property="og:description" content={metadescription} />
   <title>{title}</title>
 </head>
