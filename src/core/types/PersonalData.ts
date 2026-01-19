@@ -1,6 +1,7 @@
 export interface PersonalData {
   shortname: string;
   fullName: string;
+  image: string;
   githubPage: string;
   site: string;
   email: string;

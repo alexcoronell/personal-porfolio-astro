@@ -1,8 +1,11 @@
 import type { PersonalData } from '../types/PersonalData';
 
+const site = 'https://alexcoronell.dev';
+
 export const personalData: PersonalData = {
   shortname: 'Alex Coronell',
   fullName: 'Alexander Coronell',
+  image: `${site}/assets/images/profile/alex-coronell.webp`,
   githubPage: 'https://alexcoronell.github.io/',
   site: 'https://alexcoronell.dev',
   email: 'alexcoronell@alexcoronell.dev',
