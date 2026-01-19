@@ -14,13 +14,14 @@ import '../styles/main.scss';
 interface Props {
   title: string;
   location: string;
+  lang: string;
 }
 
-const { title, location } = Astro.props;
+const { title, location, lang = 'en' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <Basehead title={title} location={location} />
   <body>
     <Header />
