@@ -1,0 +1,77 @@
+---
+import { SEO } from 'astro-seo';
+
+/* Data */
+import { personalData } from '@data/personalData';
+
+/* Props */
+interface Props {
+  title: string;
+  metaDescription: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+}
+
+const {
+  title,
+  metaDescription,
+  noindex = false,
+  nofollow = false,
+} = Astro.props;
+
+const primaryColor = '#42b883';
+const path = Astro.url.pathname;
+const canonicalUrl = `${personalData.site}${path}`;
+---
+
+<SEO
+  title={title}
+  description={metaDescription}
+  charset="utf-8"
+  noindex={noindex}
+  nofollow={nofollow}
+  openGraph={{
+    basic: {
+      title: title || personalData.shortname,
+      type: 'website',
+      image: personalData.image,
+      url: personalData.site,
+    },
+    optional: {
+      locale: 'en',
+      siteName: personalData.shortname,
+      description: metaDescription,
+    },
+    image: {
+      alt: personalData.shortname,
+      width: 1200,
+      height: 630,
+      type: 'image/png',
+    },
+  }}
+  extend={{
+    meta: [
+      { name: 'twitter:image', content: personalData.image },
+      { name: 'twitter:title', content: title },
+      {
+        name: 'twitter:description',
+        content: metaDescription,
+      },
+      { name: 'theme-color', content: primaryColor },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+      { name: 'author', content: personalData.shortname },
+    ],
+    link: [
+      {
+        rel: 'canonical',
+        href: canonicalUrl,
+      },
+      { rel: 'icon', type: 'image/png', href: personalData.image },
+      {
+        rel: 'apple-touch-icon',
+        href: `${personalData.site}/apple-touch-icon.png`,
+      },
+    ],
+  }}
+/>
