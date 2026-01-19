@@ -15,10 +15,10 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.5",
-    "@astrojs/cloudflare": "^12.6.11",
-    "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/svelte": "^7.2.2",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/svelte": "^7.2.5",
     "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource-variable/orbitron": "^5.2.6",
@@ -27,7 +27,7 @@
     "@fontsource/fira-mono": "^5.2.6",
     "@fontsource/rajdhani": "^5.2.6",
     "@iconify-json/svg-spinners": "^1.2.2",
-    "astro": "^5.15.9",
+    "astro": "^5.16.11",
     "sass": "^1.89.2",
     "svelte": "^5.36.17",
     "tailwindcss": "^3.4.1",
