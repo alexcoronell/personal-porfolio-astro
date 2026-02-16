@@ -27,7 +27,7 @@
     "@fontsource/fira-mono": "^5.2.6",
     "@fontsource/rajdhani": "^5.2.6",
     "@iconify-json/svg-spinners": "^1.2.2",
-    "astro": "^5.16.11",
+    "astro": "^5.17.2",
     "astro-seo": "^1.1.0",
     "sass": "^1.89.2",
     "svelte": "^5.36.17",
