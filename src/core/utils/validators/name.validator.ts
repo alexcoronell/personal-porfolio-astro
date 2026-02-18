@@ -1,5 +1,5 @@
 import { get } from 'svelte/store';
-import type { InvalidField } from '@interfaces/InvalidField.interface';
+import type { InvalidField } from '@interfaces/invalid-field.interface';
 import { currentLanguage } from '../../../stores/store';
 
 export const nameValidator = (value: string): InvalidField => {

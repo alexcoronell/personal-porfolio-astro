@@ -1,38 +1,27 @@
 ---
 /* Types */
-import type { MenuItem } from '../../core/models/MenuItem.interface';
+import type { MenuItem } from '../../core/interfaces/menu-item.interface';
 
 /* Utils */
-import { getLangFromUrl } from '../../i18n/utils';
+import { getLangFromUrl, useTranslations } from '@i18n/index';
 import { translateMenu } from '../../i18n/translate';
 
 /* Data */
-import { personalData } from '../../core/data/personalData';
+import { personalData } from '../../core/data/personal-data';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const menu: MenuItem[] = translateMenu(lang);
 const worksId = menu[3].url;
-
-let title = 'Hi, my name is';
-let text = 'Know my works';
-let shortPresentation =
-  '20+ years in IT | 5+ Years Fullstack & Frontend Development Expert. I specialize in creating robust web applications and dynamic user interfaces with Angular, React, and Astro.js. Explore my portfolio to see how I can bring your next project to life.';
-
-if (lang === 'es') {
-  title = 'Hola, mi nombre es';
-  text = 'Conoce mi trabajo';
-  shortPresentation =
-    'Más de 20 años en TI | 5+ años Experto en Desarrollo Fullstack y Frontend. Soy experto en crear aplicaciones web robustas y interfaces de usuario dinámicas con Angular, React y Astro.js. Descubre mi portafolio para ver cómo puedo materializar tu próximo proyecto.';
-}
 ---
 
 <div class="Presentation">
   <div class="Presentation__content">
-    <h5>{title}</h5>
+    <h5>{t('presentation.greeting')}</h5>
     <h1>{personalData.shortname}.</h1>
-    <p>{shortPresentation}</p>
+    <p>{t('presentation.shortPresentation')}</p>
     <a href={'#' + worksId} id="know-my-works-btn" class="btn-primary"
-      >{text}!</a
+      >{t('presentation.buttonText')}!</a
     >
   </div>
 </div>

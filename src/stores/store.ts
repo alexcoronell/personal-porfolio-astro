@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
-import type { Experience } from '@interfaces/Experience';
-import type { RequestStatus } from '../core/types/RequestStatus.type';
+import type { Experience } from '@interfaces/experience.interface';
+import type { RequestStatus } from '../core/types/request-status.type';
 
 import { experiences } from '@data/experiences.data';
 import { experiencias } from '@data/experiencias.data';

@@ -1,4 +1,4 @@
-import type { ContactForm } from '../interfaces/ContactForm.interface';
+import type { ContactForm } from '../interfaces/contact-form.interface';
 
 const urlGooglesheet =
   'https://script.google.com/macros/s/AKfycbyGfKreQZAVi0gOI660JX4DnDmYvXb_7oXvQL4rNxv0Gqv1NXZN18dfFr7LnvqGTO-A/exec';

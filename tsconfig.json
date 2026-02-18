@@ -6,6 +6,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["./components/*"],
+      "@i18n/*": ["./i18n/*"],
       "@interfaces/*": ["./core/interfaces/*"],
       "@data/*": ["./core/data/*"],
       "@models/*": ["./core/models/*"],

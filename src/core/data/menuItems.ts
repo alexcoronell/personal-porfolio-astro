@@ -1,4 +1,4 @@
-import { type MenuItem } from '../models/MenuItem.interface';
+import { type MenuItem } from '../interfaces/menu-item.interface';
 
 const menuItems: MenuItem[] = [
   { name: 'About', url: 'About' },

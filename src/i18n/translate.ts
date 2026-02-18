@@ -1,8 +1,8 @@
-import { personalData } from '../core/data/personalData';
+import { personalData } from '../core/data/personal-data';
 import menuItems from '../core/data/menuItems';
-import { type PersonalData } from '../core/types/PersonalData';
-import { type MenuItem } from '../core/models/MenuItem.interface';
-import { type Status } from '../core/types/PersonalData';
+import { type PersonalData } from '../core/interfaces/personal-data.interface';
+import { type MenuItem } from '../core/interfaces/menu-item.interface';
+import { type Status } from '../core/interfaces/personal-data.interface';
 
 const presentacionCorta =
   'Soy Alex Coronell, un desarrollador full-stack con un fuerte enfoque en tecnologías front-end. Me especializo en crear interfaces precisas y fáciles de usar utilizando Angular, React y Astro, mejorando constantemente las experiencias web con código eficiente. Mi experiencia se extiende al desarrollo backend, trabajando con NestJS y NodeJS para crear soluciones confiables del lado del servidor.';

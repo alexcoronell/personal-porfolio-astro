@@ -8,7 +8,7 @@
 @use '@fontsource/cutive-mono';
 
 html {
-  @apply text-base text-primary;
+  @apply text-sm text-primary;
   font-family: 'Fira Mono', sans-serif;
 
   h1,
@@ -41,7 +41,7 @@ html {
     @apply text-xs;
   }
   p {
-    @apply mb-2 text-pretty text-base font-light text-white/90;
+    @apply mb-2 text-pretty text-sm font-light text-white/90;
     font-family: 'Montserrat Variable', sans-serif;
   }
 
