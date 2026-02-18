@@ -33,6 +33,6 @@ export const useTranslations = (lang: keyof typeof ui) => {
       }
     }
 
-    return typeof value === 'string' ? value : key;
+    return value || key;
   };
 };

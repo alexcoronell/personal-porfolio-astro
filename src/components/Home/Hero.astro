@@ -1,13 +1,13 @@
 ---
 /* Types */
-import type { MenuItem } from '../../core/interfaces/menu-item.interface';
+import type { MenuItem } from '@interfaces/menu-item.interface';
 
 /* Utils */
 import { getLangFromUrl, useTranslations } from '@i18n/index';
-import { translateMenu } from '../../i18n/translate';
+import { translateMenu } from '@i18n/translate';
 
 /* Data */
-import { personalData } from '../../core/data/personal-data';
+import { personalData } from '@data/personal-data';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

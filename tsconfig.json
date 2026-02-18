@@ -11,8 +11,9 @@
       "@data/*": ["./core/data/*"],
       "@models/*": ["./core/models/*"],
       "@types/*": ["./core/types/*"],
-      "@utils/*": ["./core/utils/*"],
-      "@stores/*": ["./stores/*"]
+      "@shared/*": ["./components/shared/*"],
+      "@stores/*": ["./stores/*"],
+      "@utils/*": ["./core/utils/*"]
     }
   }
 }

@@ -1,43 +1,27 @@
 ---
 /* Components */
-import Section from '../Shared/Section.astro';
+import Section from '@shared/Section.astro';
 
 /* Data */
-import { personalData } from '../../core/data/personal-data';
+import { personalData } from '@data/personal-data';
 
 /* Types */
-import { type MenuItem } from '../../core/interfaces/menu-item.interface';
+import { type MenuItem } from '@interfaces/menu-item.interface';
 
 /* Utils */
-import { getLangFromUrl } from '../../i18n/utils';
-import { translateMenu } from '../../i18n/translate';
+import { getLangFromUrl, useTranslations } from '@i18n/index';
+import { translateMenu } from '@i18n/translate';
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const menuItems: MenuItem[] = translateMenu(lang);
-let titleLongPresentation = 'From IT Foundations to Cutting-Edge Web Solutions';
-let longPresentation = [
-  'Meet Alex Coronell! I am a dedicated IT Professional bringing over 20 years of comprehensive experience to the table, with a specialized focus on Frontend and Fullstack Development for the past 5+ years. My extensive background in diverse IT environments provides a solid foundation for understanding the full technological landscape.',
-  'My core passion is crafting dynamic and responsive user interfaces using modern frameworks such as Angular, React, and Astro.js, ensuring exceptional user experiences. Leveraging solid fullstack knowledge, I also build robust server-side solutions using NestJS and NodeJS, and explore exciting areas like desktop applications with Electron. I approach every project as an opportunity to blend technical logic with creative problem-solving, always focused on delivering high-performance, scalable technological solutions.',
-  "Beyond technical skills, my background has fostered strong adaptability and a collaborative spirit, making me a valuable teammate committed to continuous learning and growth. If you're looking for a versatile developer ready to contribute across the stack and help build something incredible, feel free to connect!",
-];
-
-const presentationLarga = [
-  'Conoce a Alex Coronell! Soy un profesional de TI dedicado con más de 20 años de experiencia integral, con un enfoque especializado en Desarrollo Frontend y Fullstack durante los últimos más de 5 años. Mi amplia trayectoria en diversos entornos de TI proporciona una base sólida para comprender todo el panorama tecnológico.',
-  'Mi pasión principal es la creación de interfaces de usuario dinámicas y responsivas utilizando frameworks modernos como Angular, React y Astro.js, asegurando experiencias de usuario excepcionales. Con sólidos conocimientos fullstack, también construyo soluciones del lado del servidor robustas utilizando NestJS y NodeJS, y exploro áreas interesantes como aplicaciones de escritorio con Electron. Abordo cada proyecto como una oportunidad para combinar la lógica técnica con la resolución creativa de problemas, siempre enfocado en ofrecer soluciones tecnológicas escalables y de alto rendimiento.',
-  'Más allá de las habilidades técnicas, mi trayectoria ha fomentado una gran adaptabilidad y un espíritu colaborativo, haciéndome un compañero de equipo valioso comprometido con el aprendizaje y crecimiento continuo. Si buscas un desarrollador versátil listo para contribuir en todo el stack y ayudar a construir algo increíble, ¡conectemos!',
-];
-const tituloPresentacionLarga =
-  'De la Base en TI a Soluciones Web de Última Generación';
-
 const profileImgMobile = 'assets/images/profile/alex-coronell-mobile.webp';
 const profileImgDesktop = 'assets/images/profile/alex-coronell-desktop.webp';
 const index = 1;
 const title = menuItems[index - 1].name;
 const idTag = menuItems[index - 1].url;
-if (lang === 'es') {
-  longPresentation = presentationLarga;
-  titleLongPresentation = tituloPresentacionLarga;
-}
+
 import './_About.scss';
 ---
 
@@ -58,8 +42,8 @@ import './_About.scss';
       </picture>
     </div>
     <div class="AboutMe__text">
-      <h5>{titleLongPresentation}</h5>
-      {longPresentation.map(p => <p>{p}</p>)}
+      <h5>{t('presentation.titleLongPresentation')}</h5>
+      {t('presentation.longPresentation').map(p => <p>{p}</p>)}
     </div>
   </div>
 </Section>
