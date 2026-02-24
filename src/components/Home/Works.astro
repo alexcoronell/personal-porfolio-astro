@@ -3,6 +3,8 @@
 import Section from '@shared/Section.astro';
 import WorkItem from '@shared/WorkItem.astro';
 
+import { works } from '@data/works.data';
+
 /* Types */
 import type { MenuItem } from '../../core/interfaces/menu-item.interface';
 
@@ -11,7 +13,6 @@ import { getLangFromUrl } from '../../i18n/utils';
 import { translate, translateMenu } from '../../i18n/translate';
 
 const lang = getLangFromUrl(Astro.url);
-const personalData = translate(lang);
 const menuItems: MenuItem[] = translateMenu(lang);
 
 const index = 4;
@@ -21,10 +22,6 @@ const idTag = menuItems[index - 1].url;
 
 <Section index={index} title={title} idTag={idTag}>
   <div class="Works md:grid md:grid-cols-2 md:gap-6">
-    {
-      personalData.works.map((item, index) => (
-        <WorkItem item={item} index={index} />
-      ))
-    }
+    {works.map((item, index) => <WorkItem item={item} index={index} />)}
   </div>
 </Section>

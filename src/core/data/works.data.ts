@@ -1,6 +1,6 @@
 import type { Work } from '@interfaces/work.interface';
 
-export const work: Work[] = [
+export const works: Work[] = [
   {
     title: 'Pricing Program',
     status: 'active',
