@@ -37,10 +37,16 @@ export const uiMenu = {
 export const ui = {
   en: {
     nav: uiMenu.en,
+    resumeName: 'Alexander-Coronell-CV-Resume.pdf',
+    resumeShortName: 'Resume',
+    resumeAriaLabel: 'Download my Resume',
     presentation: presentation.en,
   },
   es: {
     nav: uiMenu.es,
+    resumeName: 'Alexander-Coronell-Hoja-de-Vida.pdf',
+    resumeShortName: 'Hoja de Vida',
+    resumeAriaLabel: 'Descargar mi Hoja de Vida',
     presentation: presentation.es,
   },
 };

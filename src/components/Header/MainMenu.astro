@@ -6,26 +6,10 @@ import SpainFlagIcon from '../UI/icons/SpainFlagIcon.astro';
 import UsaFlagIcon from '../UI/icons/UsaFlagIcon.astro';
 
 /* Utils */
-import { getLangFromUrl } from '../../i18n/utils';
-import { translateMenu } from '../../i18n/translate';
-
-/* Models */
-import type { MenuItem } from '../../core/interfaces/menu-item.interface';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
-
-const menuItems: MenuItem[] = translateMenu(lang);
-
-let resumeName = '';
-let resumeUrl = '';
-
-if (lang === 'es') {
-  resumeName = 'Hoja de Vida';
-  resumeUrl = '/assets/resume/Alexander-Coronell-Hoja-de-Vida.pdf';
-} else {
-  resumeName = 'Resume';
-  resumeUrl = '/assets/resume/Alexander-Coronell-CV-Resume.pdf';
-}
+const t = useTranslations(lang);
 ---
 
 <div class="MainMenu p-3">
@@ -52,26 +36,29 @@ if (lang === 'es') {
     </div>
     <div class="menuItems">
       {
-        menuItems.map((item, index) => (
+        Object.entries(t('nav')).map(([key, value], index) => (
           <a
             class="MainMenuItem"
-            href={'#' + item.url}
-            data-scroll-to={item.url}
-            aria-label={`Go to ${item.name} section`}>
+            href={'#' + key.charAt(0).toUpperCase() + key.slice(1)}
+            data-scroll-to={key.charAt(0).toUpperCase() + key.slice(1)}
+            aria-label={`Go to ${value} section`}>
             <span class="index">0{index + 1}.</span>
-            <span class="name transitionAc">{item.name}</span>
-            <span class="sr-only">Go to {item.name} section</span>
+            <span class="name transitionAc">
+              {(value as string).charAt(0).toUpperCase() +
+                (value as string).slice(1)}
+            </span>
+            <span class="sr-only">Go to {value} section</span>
           </a>
         ))
       }
       <a
-        href={resumeUrl}
+        href={'/assets/resume/' + t('resumeName')}
         target="_blank"
         class="navResumeButton btn-primary"
-        download={`${resumeName}.pdf`}
-        aria-label={`Download my ${resumeName}`}
-        >{resumeName}
-        <span class="sr-only">Download my {resumeName}</span>
+        download={`${t('resumeName')}.pdf`}
+        aria-label={t('resumeAriaLabel')}
+        >{t('resumeShortName')}
+        <span class="sr-only">{t('resumeAriaLabel')}</span>
       </a>
       <div class="languageMenu">
         <a
