@@ -36,20 +36,30 @@ const t = useTranslations(lang);
     </div>
     <div class="menuItems">
       {
-        Object.entries(t('nav')).map(([key, value], index) => (
-          <a
-            class="MainMenuItem"
-            href={'#' + key.charAt(0).toUpperCase() + key.slice(1)}
-            data-scroll-to={key.charAt(0).toUpperCase() + key.slice(1)}
-            aria-label={`Go to ${value} section`}>
-            <span class="index">0{index + 1}.</span>
-            <span class="name transitionAc">
-              {(value as string).charAt(0).toUpperCase() +
-                (value as string).slice(1)}
-            </span>
-            <span class="sr-only">Go to {value} section</span>
-          </a>
-        ))
+        Object.entries(t('nav')).map(([key, value], index) => {
+          const sectionId =
+            key.replace('nav.', '').charAt(0).toUpperCase() +
+            key.replace('nav.', '').slice(1);
+          return (
+            <a
+              class="MainMenuItem"
+              href={'#' + sectionId}
+              data-scroll-to={sectionId}
+              aria-label={`Go to ${(value as string).charAt(0).toUpperCase() + (value as string).slice(1)} section`}>
+              <span class="index">0{index + 1}.</span>
+              <span class="name transitionAc">
+                {(value as string).charAt(0).toUpperCase() +
+                  (value as string).slice(1)}
+              </span>
+              <span class="sr-only">
+                Go to{' '}
+                {(value as string).charAt(0).toUpperCase() +
+                  (value as string).slice(1)}{' '}
+                section
+              </span>
+            </a>
+          );
+        })
       }
       <a
         href={'/assets/resume/' + t('resumeName')}
