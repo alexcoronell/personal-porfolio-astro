@@ -1,4 +1,5 @@
 import { presentation } from '@data/index';
+import { experiences } from '@data/experiences.data';
 
 export const languages = {
   en: 'English',
@@ -41,6 +42,7 @@ export const ui = {
     resumeShortName: 'Resume',
     resumeAriaLabel: 'Download my Resume',
     presentation: presentation.en,
+    experiences: experiences.en,
   },
   es: {
     nav: uiMenu.es,
@@ -48,5 +50,6 @@ export const ui = {
     resumeShortName: 'Hoja de Vida',
     resumeAriaLabel: 'Descargar mi Hoja de Vida',
     presentation: presentation.es,
+    experiences: experiences.es,
   },
 };

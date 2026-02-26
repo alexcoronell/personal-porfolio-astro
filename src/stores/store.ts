@@ -3,8 +3,7 @@ import { writable } from 'svelte/store';
 import type { Experience } from '@interfaces/experience.interface';
 import type { RequestStatus } from '../core/types/request-status.type';
 
-import { experiences } from '@data/experiences.data';
-import { experiencias } from '@data/experiencias.data';
+// import { experiences } from '@data/experiences.data';
 
 const currentLanguage = writable<string>('');
 const requestStatus = writable<RequestStatus>('init');
@@ -23,11 +22,11 @@ const currentExperienceStore = writable<Experience | null>(null);
 
 const setExperiencesData = (lang: string) => {
   currentLanguage.set(lang);
-  if (lang === 'es') {
-    experiencesDataStore.set(experiencias);
+  /* if (lang === 'es') {
+    experiencesDataStore.set(experiences.es);
   } else {
-    experiencesDataStore.set(experiences);
-  }
+    experiences.esDataStore.set(experiences);
+  } */
 };
 
 const setCurrentExperience = (index: number) => {
